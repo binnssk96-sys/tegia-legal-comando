@@ -181,8 +181,8 @@
 "nombre_sprint": "Sitio web seguro",
 "fechas_sprint": "7 – 18 dic 2026",
 "area": "Sitio web",
-"tarea": "Terminar el rediseño a partir del borrador existente",
-"estado": "pendiente",
+"tarea": "Rediseño del sitio: borrador v2 publicado (tuteo, sin Tegia Sport, formulario único con autorizaciones); en revisión de textos y diseño",
+"estado": "en_curso",
 "responsable": "Claude",
 "fecha": ""
 },
@@ -405,5 +405,16 @@
 "estado": "hecho",
 "responsable": "Tú",
 "fecha": "2026-11-23"
+},
+{
+"id": "T38",
+"sprint": "Sprint 1",
+"nombre_sprint": "Sitio web seguro",
+"fechas_sprint": "7 – 18 dic 2026",
+"area": "Correo",
+"tarea": "Reconfigurar \"Enviar como\" mariaramirez@ en Gmail con el SMTP de Hostinger (error 535 de autenticación)",
+"estado": "usuario",
+"responsable": "Tú",
+"fecha": ""
 }
 ]

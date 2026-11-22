@@ -68,6 +68,15 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Política vigente: PDF "Politica de privacidad TEGIA LEGAL.pdf" en la raíz del sitio; responsable "Tegia Legal Business Services", domicilio Carrera 43 # 41 sur 16, Envigado. Discrepancias abiertas: NIT vs C.C., Carrera 43/44, Envigado/Medellín.
 - No publicar ninguno de estos textos hasta que el equipo jurídico los apruebe.
 
+## Rediseño del sitio (Sprint 1)
+- Decisiones del usuario (2026-11-23): **tuteo** ("tú") en sitio y correos; **Tegia Sport fuera por ahora**; plataforma **WordPress limpio** con pocos plugins y el formulario procesado aparte.
+- Borrador v1 (original, compartido con enlace): https://claude.ai/artifact/9HkGQ9Dqy342r9FWsn868E — copia en `sitio/borrador/v1-original.html`.
+- Borrador v2 (privado): https://claude.ai/artifact/4V68YxvdqiYT5ZSSkyxK3c — fuente `sitio/borrador/v2.html`. Cambios: tuteo, sin selector Legal/Sport, tarjeta del hero sin formulario (lleva a #diagnostico), formulario único con correo + 3 casillas (autorización obligatoria, marketing, WhatsApp) y aviso de datos sensibles, mapa reemplazado por tarjeta con enlace a Google Maps, enlaces legales en el pie.
+- El diseño y los textos NO están aprobados: iterar con el usuario. Por confirmar: "respuesta en 24 horas", "Registro Nacional de Abogados", testimonios, horario, alianzas (c.e.r., Proyección Contable).
+
+## Correo personal en Gmail
+- `tegialegal@gmail.com` recibe el reenvío de mariaramirez@ y usaba "Enviar como" mariaramirez@tegialegal.com. Desde 2026 falla con `535 5.7.8 Authentication failed`. Solución: en Gmail → Cuentas → Enviar como → editar → SMTP `smtp.hostinger.com`, puerto 465 SSL, usuario `mariaramirez@tegialegal.com` y contraseña del buzón (o restablecerla en hPanel). No usar SendGrid para el correo personal.
+
 ## Arquitectura objetivo (centro de comandos)
 - Base de datos de contactos/casos (con origen y prueba del consentimiento por contacto).
 - CRM con workflows de correo que envían por SendGrid.

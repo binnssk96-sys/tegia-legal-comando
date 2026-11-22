@@ -473,6 +473,14 @@ html{scroll-padding-top:90px}
 .rv-logo{width:150px;height:56px;display:flex;align-items:center;justify-content:flex-end;flex-shrink:0}
 .rv-logo img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .3s}
 .review:hover .rv-logo img{transform:scale(1.05)}
+/* flechas a los lados del carrusel */
+.reviews-wrap{position:relative}
+.reviews-wrap .rev-nav{position:absolute;inset:0 0 16px;margin:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none;z-index:3}
+.reviews-wrap .rev-nav button{pointer-events:auto;background:#fff;box-shadow:0 8px 24px rgba(17,19,18,.12);margin:0 -23px}
+.reviews-wrap .rev-nav button:hover,.reviews-wrap .rev-nav button:focus-visible{background:var(--green);border-color:var(--green);color:#fff}
+@media(hover:none){.reviews-wrap .rev-nav button:hover{background:#fff;color:var(--ink);border-color:var(--line)}}
+@media(max-width:1300px){.reviews-wrap .rev-nav button{margin:0 -8px}}
+@media(max-width:640px){.reviews-wrap .rev-nav button{margin:0;width:40px;height:40px}}
 </style>
 </head>
 <body>

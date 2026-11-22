@@ -14,6 +14,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - **Listas de la Cámara de Comercio / RUES: NO cargarlas en SendGrid para envíos masivos.** Motivos: (1) la SIC exige autorización previa para fines comerciales y ha sancionado marketing sin consentimiento (p. ej. Movistar, 670 millones COP); (2) la Política de Uso Aceptable de SendGrid prohíbe listas compradas/extraídas/de terceros — suspensión de la cuenta y daño a la reputación del dominio tegialegal.com; (3) riesgo reputacional y disciplinario para una firma de abogados. Uso aceptable: investigación de mercado, segmentación, y prospección 1-a-1 personalizada a correos corporativos genéricos de empresas, con baja inmediata — validar con el equipo jurídico de Tegia antes.
 
 ## Estado de SendGrid (verificado 2026-11-21)
+- API keys en la cuenta (2026-11-23): "Claude API Key" (la que usa el proxy; fue pegada en el chat, pendiente rotar) y "1234 Test".
 - API key conectada y guardada en el entorno **Default** (host `api.sendgrid.com`), acceso total.
 - Remitente verificado: `info@tegialegal.com` ("Tegia Legal"), reply-to `mariaramirez@tegialegal.com`.
 - Dominio autenticado: `tegialegal.com` (CNAME `em7166`, DKIM s1/s2) — válido.
@@ -29,7 +30,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - SPF: `v=spf1 include:_spf.mail.hostinger.com ~all` — no hace falta agregar SendGrid (usa el subdominio `em7166` para el return-path, alineación relajada).
 - DMARC original: `v=DMARC1; p=none` (sin reportes).
 - **2026-11-22 aplicado vía Hostinger Connector:** alias `dmarc@tegialegal.com` → buzón `info@` (alias id AAb156dd02ebb604ba3e4a6033c487) y DMARC fase 1 `v=DMARC1; p=none; rua=mailto:dmarc@tegialegal.com; fo=1; adkim=r; aspf=r` (TTL 3600), verificado publicado.
-- Acceso a Hostinger: **Hostinger Connector** (MCP) conectado en claude.ai. Operaciones útiles: `dns_records_list/validate/update` (usar `overwrite: true` solo con el name+type exacto), `mail_orders_list` (orden O210e860082f9a3a, plan Free Business Email, 100 cupos), `mail_mailboxes_list`, `mail_aliases_create-alias`. Buzones: alexandra@, info@, isabella@, mariaramirez@.
+- Acceso a Hostinger: **Hostinger Connector** (MCP) conectado en claude.ai. Operaciones útiles: `dns_records_list/validate/update` (usar `overwrite: true` solo con el name+type exacto), `mail_orders_list` (orden O210e860082f9a3a, plan Free Business Email, 100 cupos), `mail_mailboxes_list`, `mail_aliases_create-alias`. Buzones: alexandra@, info@, isabella@, mariaramirez@ (reenvía a tegialegal@gmail.com con copia, desde 2026-08-18).
 - Fases: 2–4 semanas en `none` revisando reportes → `p=quarantine; pct=25` → `pct=100` → `p=reject`. Solo avanzar si todos los remitentes legítimos (Hostinger Mail, SendGrid, formularios web) pasan DKIM/SPF alineado.
 - Google Postmaster Tools: TXT `google-site-verification=e_vUEq_GzkbRbn6jjxOGGk-JJUZVO3flU5r2Q8iXOGM` en `@` junto al SPF (2026-11-22). Al agregar TXT en `@` usar `overwrite: false` para no borrar el SPF.
 - Consultas DNS: el contenedor no resuelve DNS directo; usar `https://dns.google/resolve?name=...&type=...`.
@@ -53,7 +54,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Captura: formulario "Cuéntanos tu caso" y suscripción ligera. Flujo de seguimiento: si describe su caso → acuse + agendar llamada/WhatsApp; si no → bienvenida, pedir más información, contenido útil y opción de que Tegia llame o escriba por WhatsApp.
 
 ## Inventario del sitio (2026-11-22)
-- WordPress 7.1.5 desde 2026-11-23 (antes 6.8.10), PHP 8.4, tema Astra 4.11.5 + Elementor 3.30, hosting compartido Hostinger cuenta `u533514420`, raíz `/home/u533514420/domains/tegialegal.com/public_html`. SSL de por vida + CDN activos; caché apagada.
+- WordPress 7.1.5 desde 2026-11-23 (antes 6.8.10), PHP 8.4, tema Astra 4.14.3 + Elementor 3.30, hosting compartido Hostinger cuenta `u533514420`, raíz `/home/u533514420/domains/tegialegal.com/public_html`. SSL de por vida + CDN activos; caché apagada.
 - Formulario WPForms Lite id 10 ("Solicita tu diagnóstico jurídico gratuito"): sin casilla de autorización, sin CAPTCHA, no guarda entradas.
 - Riesgos: logs de errores 2023 públicos, Slider Revolution 6.2.8 y Avada 6.2.3 (2020), WP Reset en producción, 10 temas y 19 plugins, cabeceras de seguridad ausentes.
 - Informe completo: `docs/inventario-sitio-web.md`. Recomendación: arreglos rápidos ya + reconstrucción limpia en el rediseño.

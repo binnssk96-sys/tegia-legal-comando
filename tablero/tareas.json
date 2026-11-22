@@ -137,7 +137,7 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "SendGrid",
-"tarea": "Rotar la API key pegada en el chat",
+"tarea": "Rotar la API key \"Claude API Key\" de SendGrid (pegada en el chat) y borrar la key \"1234 Test\" si no se usa",
 "estado": "usuario",
 "responsable": "Tú",
 "fecha": ""
@@ -159,7 +159,7 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Correo",
-"tarea": "Revisar el reenvío activo de mariaramirez@",
+"tarea": "Confirmar el reenvío de mariaramirez@ a tegialegal@gmail.com (activo desde ago 2026, guarda copia)",
 "estado": "usuario",
 "responsable": "Tú",
 "fecha": ""
@@ -401,7 +401,7 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Sitio web",
-"tarea": "Actualizar plugins y tema desde wp-admin (WordPress ya está en 7.1.5; Elementor, WPForms, Contact Form 7 y Astra siguen en versiones de 2025)",
+"tarea": "Actualizar plugins desde wp-admin (WordPress 7.1.5 y Astra 4.14.3 ya actualizados; faltan Elementor 3.30.0, WPForms 1.9.6.1 y Contact Form 7 6.1)",
 "estado": "usuario",
 "responsable": "Tú",
 "fecha": ""

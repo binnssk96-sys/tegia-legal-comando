@@ -1,0 +1,184 @@
+<meta name="dash-one-writer">
+<style>
+.tg { display: flex; flex-direction: column; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.tg-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.tg-lead { margin: var(--cds-gap-sm) 0 0; color: var(--color-fg-muted); max-width: 65ch; line-height: 1.5; }
+.tg-lead b { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); font-variant-numeric: tabular-nums; }
+.tg-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--cds-gap-md); }
+.tg-tile { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+.tg-tile .lbl { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); letter-spacing: .04em; text-transform: uppercase; }
+.tg-tile .num { font-family: var(--font-anthropic-serif); font-size: 2.2rem; font-weight: 400; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.tg-tile.you { border-color: var(--color-warn); }
+.tg h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-sm); }
+.tg-note { margin: 0 0 var(--cds-gap-md); color: var(--color-fg-muted); font-size: var(--cds-font-size-body); }
+.tg-sprints { display: flex; flex-direction: column; gap: var(--cds-gap-md); min-height: 120px; }
+.tg-sp { display: grid; grid-template-columns: minmax(0, 15rem) 1fr 3.5rem; gap: var(--cds-gap-md); align-items: center; }
+.tg-sp .nm { font-weight: var(--cds-font-weight-medium); }
+.tg-sp .dt { display: block; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tg-bar { height: 10px; border-radius: 5px; background: var(--cds-chart-grid); overflow: hidden; }
+.tg-bar > span { display: block; height: 100%; border-radius: 5px; }
+.tg-sp .pc { text-align: right; font-variant-numeric: tabular-nums; }
+@media (max-width: 520px) { .tg-sp { grid-template-columns: 1fr 3rem; } .tg-sp .tg-bar { grid-column: 1 / -1; grid-row: 2; } }
+.tg-wrap { overflow-x: auto; }
+.tg table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-body); }
+.tg th { text-align: left; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.tg td { padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.tg td.tk { min-width: 16rem; }
+.tg-chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: var(--cds-font-size-caption); white-space: nowrap; border: 1px solid currentColor; }
+.tg-chip.hecho { color: var(--color-ok); }
+.tg-chip.en_curso { color: var(--color-fg); }
+.tg-chip.pendiente { color: var(--color-fg-muted); }
+.tg-chip.usuario { color: var(--color-warn); }
+.tg-row-hecho td.tk { color: var(--color-fg-muted); }
+.tg-filter { display: flex; align-items: center; gap: var(--cds-gap-sm); margin-bottom: var(--cds-gap-md); flex-wrap: wrap; }
+.tg-empty { color: var(--color-fg-muted); }
+</style>
+
+<div class="tg">
+  <header class="tg-head" id="resumen">
+    <h1>Tablero Tegia Legal</h1>
+    <p class="tg-lead">Llevamos <b data-draw="pct" data-source="resumen" data-field="pct" data-row="0">—</b> del plan: <b data-draw="hechas" data-source="resumen" data-field="hechas" data-row="0">—</b> de <b data-draw="total" data-source="resumen" data-field="total" data-row="0">—</b> tareas hechas. Estamos en el Sprint 0, Fundaciones (21 nov – 5 dic 2026).</p>
+  </header>
+
+  <section class="tg-tiles" id="cifras" aria-label="Cifras del proyecto">
+    <div class="tg-tile"><span class="lbl">Hechas</span><span class="num" data-draw="t_hechas" data-source="resumen" data-field="hechas" data-row="0">—</span></div>
+    <div class="tg-tile"><span class="lbl">En curso</span><span class="num" data-draw="t_curso" data-source="resumen" data-field="en_curso" data-row="0">—</span></div>
+    <div class="tg-tile"><span class="lbl">Pendientes de Claude</span><span class="num" data-draw="t_pend" data-source="resumen" data-field="pendientes" data-row="0">—</span></div>
+    <div class="tg-tile you"><span class="lbl">Te toca a ti</span><span class="num" data-draw="t_tuyas" data-source="resumen" data-field="tuyas" data-row="0">—</span></div>
+  </section>
+
+  <section id="te-toca">
+    <h2>Te toca a ti</h2>
+    <p class="tg-note">Tareas que dependen de ti para avanzar.</p>
+    <div class="tg-wrap">
+      <table data-source="tareas" data-row-key="id">
+        <thead><tr><th data-field="tarea">Tarea</th><th data-field="sprint">Sprint</th><th data-field="area">Área</th></tr></thead>
+        <tbody data-draw="tuyas"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="sprints">
+    <h2>Avance por sprint</h2>
+    <p class="tg-note">Porcentaje de tareas hechas en cada sprint de dos semanas.</p>
+    <div class="tg-sprints" data-draw="sprints" data-source="por_sprint">—</div>
+  </section>
+
+  <section id="tareas">
+    <h2>Todas las tareas</h2>
+    <div class="tg-filter">
+      <label for="tg-sprint-filter">Sprint</label>
+      <select class="dash-select" id="tg-sprint-filter" aria-label="Filtrar por sprint">
+        <option value="">Todos los sprints</option>
+        <option value="Sprint 0">Sprint 0 · Fundaciones</option>
+        <option value="Sprint 1">Sprint 1 · Sitio web seguro</option>
+        <option value="Sprint 2">Sprint 2 · Base de datos y flujos</option>
+        <option value="Sprint 3">Sprint 3 · Tableros</option>
+        <option value="Sprint 4">Sprint 4 · WhatsApp y CRM</option>
+        <option value="Sprint 5">Sprint 5 · Centralización</option>
+      </select>
+    </div>
+    <div class="tg-wrap">
+      <table data-source="tareas" data-row-key="id">
+        <thead><tr><th data-field="estado">Estado</th><th data-field="tarea">Tarea</th><th data-field="sprint">Sprint</th><th data-field="area">Área</th><th data-field="responsable">Responsable</th><th data-field="fecha">Fecha</th></tr></thead>
+        <tbody data-draw="tabla"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+window.TG_ESTADOS = { hecho: 'Hecho', en_curso: 'En curso', pendiente: 'Pendiente', usuario: 'Te toca' };
+dash.calc('resumen', {
+  title: 'Resumen del avance',
+  description: 'Cuenta las tareas por estado y el porcentaje hecho sobre el total.',
+  inputs: ['tareas'],
+  fn: (tareas) => {
+    const c = (e) => tareas.filter((t) => t.estado === e).length;
+    const total = tareas.length, hechas = c('hecho');
+    return [{ total, hechas, en_curso: c('en_curso'), pendientes: c('pendiente'), tuyas: c('usuario'), pct: total ? Math.round(100 * hechas / total) : 0 }];
+  }
+});
+dash.calc('por_sprint', {
+  title: 'Avance por sprint',
+  description: 'Tareas hechas sobre el total de cada sprint.',
+  inputs: ['tareas'],
+  fn: (tareas) => {
+    const g = d3.groups(tareas, (t) => t.sprint);
+    return g.map(([sprint, ts]) => {
+      const hechas = ts.filter((t) => t.estado === 'hecho').length;
+      return { sprint, nombre_sprint: ts[0].nombre_sprint, fechas_sprint: ts[0].fechas_sprint, total: ts.length, hechas, pct: Math.round(100 * hechas / ts.length) };
+    }).sort((a, b) => d3.ascending(a.sprint, b.sprint));
+  }
+});
+</script>
+
+<script>
+(function () {
+  const one = (field, fmt) => (el) => {
+    const r = dash.data('resumen');
+    el.textContent = r.status === 'ok' && r.data && r.data[0] ? fmt(r.data[0][field]) : '—';
+  };
+  const n = (v) => String(v), p = (v) => v + ' %';
+  dash.draw('pct', one('pct', p));
+  dash.draw('hechas', one('hechas', n));
+  dash.draw('total', one('total', n));
+  dash.draw('t_hechas', one('hechas', n));
+  dash.draw('t_curso', one('en_curso', n));
+  dash.draw('t_pend', one('pendientes', n));
+  dash.draw('t_tuyas', one('tuyas', n));
+
+  const msgRow = (tb, cols, text) => {
+    const tr = document.createElement('tr'); const td = document.createElement('td');
+    td.colSpan = cols; td.className = 'tg-empty'; td.textContent = text; tr.appendChild(td); tb.replaceChildren(tr);
+  };
+  const cell = (tr, text, cls) => { const td = document.createElement('td'); if (cls) td.className = cls; td.textContent = text || ''; tr.appendChild(td); return td; };
+
+  dash.draw('tuyas', (tb) => {
+    const d = dash.data('tareas');
+    if (d.status === 'error') return msgRow(tb, 3, 'No se pudo cargar la lista de tareas.');
+    if (d.status !== 'ok') return msgRow(tb, 3, 'Cargando…');
+    const rows = d.data.filter((t) => t.estado === 'usuario');
+    if (!rows.length) return msgRow(tb, 3, 'Nada pendiente de tu lado.');
+    tb.replaceChildren(...rows.map((t) => {
+      const tr = document.createElement('tr'); tr.dataset.key = t.id;
+      cell(tr, t.tarea, 'tk'); cell(tr, t.sprint); cell(tr, t.area); return tr;
+    }));
+  });
+
+  dash.draw('sprints', (box) => {
+    const d = dash.data('por_sprint');
+    if (d.status === 'error') { box.textContent = 'No se pudo calcular el avance por sprint.'; return; }
+    if (d.status !== 'ok' || !d.data) { box.textContent = '—'; return; }
+    box.replaceChildren(...d.data.map((s) => {
+      const row = document.createElement('div'); row.className = 'tg-sp';
+      const nm = document.createElement('div'); nm.className = 'nm'; nm.textContent = s.sprint + ' · ' + s.nombre_sprint;
+      const dt = document.createElement('span'); dt.className = 'dt'; dt.textContent = s.fechas_sprint + ' · ' + s.hechas + ' de ' + s.total; nm.appendChild(dt);
+      const bar = document.createElement('div'); bar.className = 'tg-bar'; bar.setAttribute('role', 'img'); bar.setAttribute('aria-label', s.sprint + ': ' + s.pct + ' % hecho');
+      const fill = document.createElement('span'); fill.style.width = s.pct + '%'; fill.style.background = s.pct === 100 ? 'var(--color-ok)' : dash.colors[0]; bar.appendChild(fill);
+      const pc = document.createElement('div'); pc.className = 'pc'; pc.textContent = s.pct + ' %';
+      pc.dataset.source = 'por_sprint'; pc.dataset.field = 'pct'; pc.dataset.where = 'sprint=' + encodeURIComponent(s.sprint);
+      row.append(nm, bar, pc); return row;
+    }));
+  });
+
+  dash.draw('tabla', (tb) => {
+    const d = dash.data('tareas');
+    if (d.status === 'error') return msgRow(tb, 6, 'No se pudo cargar la lista de tareas.');
+    if (d.status !== 'ok') return msgRow(tb, 6, 'Cargando…');
+    const sel = document.getElementById('tg-sprint-filter');
+    const f = sel ? sel.value : '';
+    const rows = d.data.filter((t) => !f || t.sprint === f);
+    if (!rows.length) return msgRow(tb, 6, 'No hay tareas en este sprint.');
+    tb.replaceChildren(...rows.map((t) => {
+      const tr = document.createElement('tr'); tr.dataset.key = t.id; tr.className = 'tg-row-' + t.estado;
+      const td = cell(tr, ''); const chip = document.createElement('span'); chip.className = 'tg-chip ' + t.estado; chip.textContent = window.TG_ESTADOS[t.estado] || t.estado; td.appendChild(chip);
+      cell(tr, t.tarea, 'tk'); cell(tr, t.sprint); cell(tr, t.area); cell(tr, t.responsable);
+      cell(tr, t.fecha ? d3.utcFormat('%d/%m/%Y')(new Date(t.fecha + 'T00:00:00Z')) : '');
+      return tr;
+    }));
+  });
+
+  document.querySelectorAll('#tg-sprint-filter').forEach((s) => s.addEventListener('change', () => dash.draw('tabla')));
+})();
+</script>

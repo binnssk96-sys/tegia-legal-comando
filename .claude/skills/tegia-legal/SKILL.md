@@ -58,7 +58,12 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Bandejas de correo por cliente/caso, control de casos, plazos y entregables.
 
 ## Plan de trabajo por sprints (2 semanas c/u)
-Ver `references/plan.md`.
+Ver `references/plan.md` (fuente de verdad del estado de cada tarea).
+
+## Tablero del proyecto
+- Artefacto "Tablero Tegia Legal": https://claude.ai/artifact/HAa4j3zxfWYFmgweHTu2W1 (tipo Data).
+- Datos: `tablero/tareas.json` en el repo (id, sprint, nombre_sprint, fechas_sprint, area, tarea, estado [hecho|en_curso|pendiente|usuario], responsable, fecha). Página: `tablero/index.html`.
+- Para actualizar: editar `tareas.json` (y `plan.md`), subirlo como asset (`Artifact` publish con `url` del tablero, `asset: true`), y `ArtifactData update` en `datasets/tareas` con el nuevo `source.url` y `updated`. Hacerlo sin preguntar cada vez que cambie el estado de una tarea.
 
 ## Pendientes de decisión del usuario
 - Confirmar hosting (Hostinger) y dar acceso.

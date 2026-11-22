@@ -55,6 +55,9 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Formulario WPForms Lite id 10 ("Solicita tu diagnóstico jurídico gratuito"): sin casilla de autorización, sin CAPTCHA, no guarda entradas.
 - Riesgos: logs de errores 2023 públicos, Slider Revolution 6.2.8 y Avada 6.2.3 (2020), WP Reset en producción, 10 temas y 19 plugins, cabeceras de seguridad ausentes.
 - Informe completo: `docs/inventario-sitio-web.md`. Recomendación: arreglos rápidos ya + reconstrucción limpia en el rediseño.
+- 2026-11-22 arreglos rápidos aplicados: plugins revslider/wp-reset/fusion-* y 8 temas sin uso movidos a `public_html/_cuarentena-20261122/` (bloqueada), `.htaccess` con cabeceras de seguridad (original en `sitio/htaccess-original-2026-11-22`), PHP expose_php Off y cookies seguras. Detalle y cómo deshacer en `docs/inventario-sitio-web.md`.
+- Cambios de archivos: `hosting_files_generate-upload-url` da una clave temporal (~6 h) para la API de File Browser en `srv1282-files.hstgr.io` (permitido en Default): `POST api/resources/<ruta>?override=true` sube, `PATCH ...?action=rename&destination=` mueve, `DELETE` borra. Nunca guardar esas claves en archivos del repo. Nombres con bytes no UTF-8 se codifican como %C2%xx.
+- WordPress no aparece en `wordpress_installations_list` ni tras `wordpress_installations_detect`: las operaciones `wordpress_*` no están disponibles.
 - Lectura pública del sitio permitida en el entorno Default (`tegialegal.com`, `www.tegialegal.com`).
 
 ## Arquitectura objetivo (centro de comandos)

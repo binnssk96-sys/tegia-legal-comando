@@ -62,3 +62,23 @@ El sitio arrastra restos de al menos cuatro diseños (Avada, Sydney, Roxima, Ast
 1. Arreglos rápidos ya (no cambian el diseño): borrar logs y archivos sobrantes, desactivar y borrar WP Reset, Slider Revolution, Avada/Fusion y temas sin uso, actualizar núcleo y plugins, cabeceras de seguridad, `expose_php` off.
 2. Rediseño sobre una base mínima: Astra + Elementor (o tema de bloques) con pocos plugins, o un sitio estático/Node a medida desplegado desde el repositorio, con el formulario procesado en el servidor y enviado por SendGrid.
 3. Formulario nuevo con casilla de autorización, enlace a la política, Turnstile, registro de consentimiento y almacenamiento cifrado.
+
+## Arreglos rápidos aplicados (2026-11-22)
+Aprobados por el usuario. Nada se borró: todo se movió a `public_html/_cuarentena-20261122/` (bloqueada al público con `Require all denied`, verificado 403).
+
+| Cambio | Detalle | Verificación |
+|---|---|---|
+| Plugins retirados | revslider, wp-reset, fusion-core, fusion-builder → `_cuarentena-20261122/plugins/` | Sitio 200, sin errores PHP |
+| Temas retirados | Avada, sydney, Roxima (renombrada `roxima`), twentyseventeen, twentynineteen, twentytwenty, twentytwentythree, twentytwentyfour → `_cuarentena-20261122/themes/`. Quedan astra (activo) y twentytwentyfive | Sitio 200 |
+| Archivos sobrantes | 2 error_log-2023*.gz, default.php.bak, .htaccess.bk, .htaccess_original, readme.html → `_cuarentena-20261122/raiz/` | 404 público |
+| `.htaccess` | Bloqueo de logs/copias/readme/license/wp-config-sample/default.php, XML-RPC bloqueado, sin listado de directorios, cabeceras HSTS, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy, sin X-Powered-By. Copia del original: `sitio/htaccess-original-2026-11-22` | Cabeceras presentes; xmlrpc 403 |
+| PHP | expose_php Off, session.cookie_secure On, session.cookie_httponly On, session.use_strict_mode On | Sin X-Powered-By |
+
+Verificado después: portada, wp-login.php y página 454 responden 200 sin errores; formulario 10 presente; REST API y PDF de política siguen accesibles.
+
+**Cómo deshacer:** mover las carpetas de vuelta desde `_cuarentena-20261122/` con el administrador de archivos de Hostinger; restaurar `.htaccess` desde `sitio/htaccess-original-2026-11-22`.
+
+**Pendiente:**
+- WordPress no aparece en el instalador de Hostinger (la detección automática no lo encontró), así que las actualizaciones de núcleo y plugins no se pueden hacer por API: hacerlas desde wp-admin o reinstalar limpio en el rediseño.
+- No hubo copia de seguridad de hPanel antes de los cambios (la API no tiene esa función); la cuarentena hace de respaldo de lo retirado. La base de datos no se tocó.
+- Borrar definitivamente `_cuarentena-20261122/` cuando el sitio lleve unas semanas estable.

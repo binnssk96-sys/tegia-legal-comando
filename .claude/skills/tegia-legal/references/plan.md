@@ -14,7 +14,8 @@ Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 - ✅ Repositorio GitHub `binnssk96-sys/tegia-legal-comando` creado, con la skill.
 - ✅ Skill `tegia-legal` subida a claude.ai (versión del 21 nov, desactualizada).
 - ✅ Inventario del sitio actual (docs/inventario-sitio-web.md).
-- 👤 Aprobar arreglos rápidos de seguridad del sitio (logs públicos, plugins/temas abandonados, WP Reset); luego los aplica Claude.
+- ✅ Arreglos rápidos de seguridad aplicados (ver docs/inventario-sitio-web.md).
+- 👤 Actualizar WordPress y plugins desde wp-admin (la API de Hostinger no detecta esta instalación).
 - ⏳ Redactar aviso de privacidad, política de tratamiento y texto de autorización (marketing + WhatsApp) para revisión del equipo jurídico.
 - ⏳ Configurar Google Postmaster Tools para tegialegal.com.
 - 👤 Rotar la API key de SendGrid que se pegó en el chat.

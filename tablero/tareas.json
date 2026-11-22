@@ -390,7 +390,18 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Sitio web",
-"tarea": "Arreglos rápidos de seguridad: borrar logs públicos, archivos sobrantes, WP Reset, Slider Revolution, Avada y temas sin uso; actualizar plugins",
+"tarea": "Arreglos rápidos de seguridad (plugins/temas abandonados y archivos sobrantes a cuarentena, .htaccess con cabeceras, PHP)",
+"estado": "hecho",
+"responsable": "Claude",
+"fecha": "2026-11-22"
+},
+{
+"id": "T37",
+"sprint": "Sprint 0",
+"nombre_sprint": "Fundaciones",
+"fechas_sprint": "21 nov – 5 dic 2026",
+"area": "Sitio web",
+"tarea": "Actualizar WordPress y plugins desde wp-admin (no disponible por API)",
 "estado": "usuario",
 "responsable": "Tú",
 "fecha": ""

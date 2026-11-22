@@ -17,7 +17,7 @@ Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 - ✅ Arreglos rápidos de seguridad aplicados (ver docs/inventario-sitio-web.md).
 - 👤 Actualizar WordPress y plugins desde wp-admin (la API de Hostinger no detecta esta instalación).
 - ✅ Borrador de textos legales listo para el equipo jurídico: https://claude.ai/artifact/FNwSxVtXXqDgkTspCu7YC5
-- ⏳ Configurar Google Postmaster Tools para tegialegal.com.
+- 👤 Google Postmaster Tools: TXT de verificación publicado (2026-11-22); falta que el usuario haga clic en Verificar.
 - 👤 Rotar la API key de SendGrid que se pegó en el chat.
 - 👤 Confirmar que el nivel de Essentials comprado (500.000/mes) es el deseado.
 - 👤 Revisar si el reenvío activo de mariaramirez@ es intencional.

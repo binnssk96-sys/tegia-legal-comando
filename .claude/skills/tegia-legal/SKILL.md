@@ -30,6 +30,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - **2026-11-22 aplicado vía Hostinger Connector:** alias `dmarc@tegialegal.com` → buzón `info@` (alias id AAb156dd02ebb604ba3e4a6033c487) y DMARC fase 1 `v=DMARC1; p=none; rua=mailto:dmarc@tegialegal.com; fo=1; adkim=r; aspf=r` (TTL 3600), verificado publicado.
 - Acceso a Hostinger: **Hostinger Connector** (MCP) conectado en claude.ai. Operaciones útiles: `dns_records_list/validate/update` (usar `overwrite: true` solo con el name+type exacto), `mail_orders_list` (orden O210e860082f9a3a, plan Free Business Email, 100 cupos), `mail_mailboxes_list`, `mail_aliases_create-alias`. Buzones: alexandra@, info@, isabella@, mariaramirez@.
 - Fases: 2–4 semanas en `none` revisando reportes → `p=quarantine; pct=25` → `pct=100` → `p=reject`. Solo avanzar si todos los remitentes legítimos (Hostinger Mail, SendGrid, formularios web) pasan DKIM/SPF alineado.
+- Google Postmaster Tools: TXT `google-site-verification=e_vUEq_GzkbRbn6jjxOGGk-JJUZVO3flU5r2Q8iXOGM` en `@` junto al SPF (2026-11-22). Al agregar TXT en `@` usar `overwrite: false` para no borrar el SPF.
 - Consultas DNS: el contenedor no resuelve DNS directo; usar `https://dns.google/resolve?name=...&type=...`.
 
 ## Plan recomendado de SendGrid

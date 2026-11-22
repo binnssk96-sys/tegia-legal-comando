@@ -104,10 +104,10 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Sitio web",
-"tarea": "Inventario del sitio actual (plataforma, plugins, formularios, seguridad)",
-"estado": "en_curso",
+"tarea": "Inventario del sitio actual (ver docs/inventario-sitio-web.md)",
+"estado": "hecho",
 "responsable": "Claude",
-"fecha": ""
+"fecha": "2026-11-22"
 },
 {
 "id": "T11",
@@ -382,6 +382,17 @@
 "tarea": "Agentes programados (resúmenes, entregabilidad, informes)",
 "estado": "pendiente",
 "responsable": "Claude",
+"fecha": ""
+},
+{
+"id": "T36",
+"sprint": "Sprint 0",
+"nombre_sprint": "Fundaciones",
+"fechas_sprint": "21 nov – 5 dic 2026",
+"area": "Sitio web",
+"tarea": "Arreglos rápidos de seguridad: borrar logs públicos, archivos sobrantes, WP Reset, Slider Revolution, Avada y temas sin uso; actualizar plugins",
+"estado": "usuario",
+"responsable": "Tú",
 "fecha": ""
 }
 ]

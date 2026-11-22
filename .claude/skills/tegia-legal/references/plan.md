@@ -13,7 +13,8 @@ Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 - ✅ DMARC fase 1 publicado (`p=none` con reportes).
 - ✅ Repositorio GitHub `binnssk96-sys/tegia-legal-comando` creado, con la skill.
 - ✅ Skill `tegia-legal` subida a claude.ai (versión del 21 nov, desactualizada).
-- 🔄 Inventario del sitio actual en Hostinger (plataforma, plugins, formularios, seguridad) — siguiente tarea.
+- ✅ Inventario del sitio actual (docs/inventario-sitio-web.md).
+- 👤 Aprobar arreglos rápidos de seguridad del sitio (logs públicos, plugins/temas abandonados, WP Reset); luego los aplica Claude.
 - ⏳ Redactar aviso de privacidad, política de tratamiento y texto de autorización (marketing + WhatsApp) para revisión del equipo jurídico.
 - ⏳ Configurar Google Postmaster Tools para tegialegal.com.
 - 👤 Rotar la API key de SendGrid que se pegó en el chat.

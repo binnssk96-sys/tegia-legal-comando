@@ -50,6 +50,13 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Requisitos de seguridad para formularios de casos: HTTPS/HSTS, CSP, protección anti-bot (Turnstile/reCAPTCHA), validación del lado servidor, cifrado en reposo de los relatos de casos, mínimos datos en el formulario, aviso de privacidad + casilla de autorización de tratamiento (no premarcada), registro de la autorización (fecha, IP, texto aceptado), backups, WAF, MFA en Hostinger, actualizaciones del CMS.
 - Captura: formulario "Cuéntanos tu caso" y suscripción ligera. Flujo de seguimiento: si describe su caso → acuse + agendar llamada/WhatsApp; si no → bienvenida, pedir más información, contenido útil y opción de que Tegia llame o escriba por WhatsApp.
 
+## Inventario del sitio (2026-11-22)
+- WordPress 6.8.10, PHP 8.4, tema Astra 4.11.5 + Elementor 3.30, hosting compartido Hostinger cuenta `u533514420`, raíz `/home/u533514420/domains/tegialegal.com/public_html`. SSL de por vida + CDN activos; caché apagada.
+- Formulario WPForms Lite id 10 ("Solicita tu diagnóstico jurídico gratuito"): sin casilla de autorización, sin CAPTCHA, no guarda entradas.
+- Riesgos: logs de errores 2023 públicos, Slider Revolution 6.2.8 y Avada 6.2.3 (2020), WP Reset en producción, 10 temas y 19 plugins, cabeceras de seguridad ausentes.
+- Informe completo: `docs/inventario-sitio-web.md`. Recomendación: arreglos rápidos ya + reconstrucción limpia en el rediseño.
+- Lectura pública del sitio permitida en el entorno Default (`tegialegal.com`, `www.tegialegal.com`).
+
 ## Arquitectura objetivo (centro de comandos)
 - Base de datos de contactos/casos (con origen y prueba del consentimiento por contacto).
 - CRM con workflows de correo que envían por SendGrid.

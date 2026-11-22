@@ -137,7 +137,7 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "SendGrid",
-"tarea": "Rotar la API key \"Claude API Key\" de SendGrid (pegada en el chat) y borrar la key \"1234 Test\" si no se usa",
+"tarea": "Borrar la API key antigua \"Claude API Key\" en SendGrid (la nueva \"API KEY 2V\" ya está activa)",
 "estado": "usuario",
 "responsable": "Tú",
 "fecha": ""
@@ -170,7 +170,7 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Proyecto",
-"tarea": "Actualizar la skill en claude.ai con el último .zip",
+"tarea": "Subir la skill actualizada (.zip del 23 nov) en claude.ai",
 "estado": "usuario",
 "responsable": "Tú",
 "fecha": ""
@@ -401,9 +401,9 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Sitio web",
-"tarea": "Actualizar plugins desde wp-admin (WordPress 7.1.5 y Astra 4.14.3 ya actualizados; faltan Elementor 3.30.0, WPForms 1.9.6.1 y Contact Form 7 6.1)",
-"estado": "usuario",
+"tarea": "Actualizar WordPress (7.1.5), tema Astra (4.14.3) y plugins (Elementor 4.4.1, WPForms 2.0.5.1, CF7 6.2.5)",
+"estado": "hecho",
 "responsable": "Tú",
-"fecha": ""
+"fecha": "2026-11-23"
 }
 ]

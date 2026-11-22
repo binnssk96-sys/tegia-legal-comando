@@ -15,10 +15,10 @@ Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 - ✅ Skill `tegia-legal` subida a claude.ai (versión del 21 nov, desactualizada).
 - ✅ Inventario del sitio actual (docs/inventario-sitio-web.md).
 - ✅ Arreglos rápidos de seguridad aplicados (ver docs/inventario-sitio-web.md).
-- 🔄 WordPress actualizado a 7.1.5 (2026-11-23); faltan plugins (Elementor 3.30.0, WPForms 1.9.6.1, CF7 6.1) y tema Astra 4.11.5.
+- ✅ WordPress 7.1.5, Astra 4.14.3 y plugins actualizados (2026-11-23).
 - ✅ Borrador de textos legales listo para el equipo jurídico: https://claude.ai/artifact/FNwSxVtXXqDgkTspCu7YC5
 - ✅ Google Postmaster Tools verificado por el usuario (2026-11-23).
-- 👤 Rotar la API key de SendGrid que se pegó en el chat.
+- 🔄 Nueva API key de SendGrid activa (2026-11-23); falta borrar la antigua "Claude API Key".
 - ✅ Plan Essentials de 50.000 confirmado por el usuario; la API muestra cupo de 500.000 (aclarar).
 - 👤 Revisar si el reenvío activo de mariaramirez@ es intencional.
 - 👤 Actualizar la skill en claude.ai con el último .zip.

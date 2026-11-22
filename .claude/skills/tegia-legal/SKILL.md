@@ -14,7 +14,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - **Listas de la Cámara de Comercio / RUES: NO cargarlas en SendGrid para envíos masivos.** Motivos: (1) la SIC exige autorización previa para fines comerciales y ha sancionado marketing sin consentimiento (p. ej. Movistar, 670 millones COP); (2) la Política de Uso Aceptable de SendGrid prohíbe listas compradas/extraídas/de terceros — suspensión de la cuenta y daño a la reputación del dominio tegialegal.com; (3) riesgo reputacional y disciplinario para una firma de abogados. Uso aceptable: investigación de mercado, segmentación, y prospección 1-a-1 personalizada a correos corporativos genéricos de empresas, con baja inmediata — validar con el equipo jurídico de Tegia antes.
 
 ## Estado de SendGrid (verificado 2026-11-21)
-- API keys en la cuenta (2026-11-23): "Claude API Key" (la que usa el proxy; fue pegada en el chat, pendiente rotar) y "1234 Test".
+- API keys (2026-11-23): "API KEY 2V" es la nueva y la que usa el proxy (guardada con el formulario seguro). "Claude API Key" es la antigua expuesta en el chat: pendiente de borrar. "1234 Test" ya no existe.
 - API key conectada y guardada en el entorno **Default** (host `api.sendgrid.com`), acceso total.
 - Remitente verificado: `info@tegialegal.com` ("Tegia Legal"), reply-to `mariaramirez@tegialegal.com`.
 - Dominio autenticado: `tegialegal.com` (CNAME `em7166`, DKIM s1/s2) — válido.
@@ -54,7 +54,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Captura: formulario "Cuéntanos tu caso" y suscripción ligera. Flujo de seguimiento: si describe su caso → acuse + agendar llamada/WhatsApp; si no → bienvenida, pedir más información, contenido útil y opción de que Tegia llame o escriba por WhatsApp.
 
 ## Inventario del sitio (2026-11-22)
-- WordPress 7.1.5 desde 2026-11-23 (antes 6.8.10), PHP 8.4, tema Astra 4.14.3 + Elementor 3.30, hosting compartido Hostinger cuenta `u533514420`, raíz `/home/u533514420/domains/tegialegal.com/public_html`. SSL de por vida + CDN activos; caché apagada.
+- WordPress 7.1.5 desde 2026-11-23 (antes 6.8.10), PHP 8.4, tema Astra 4.14.3 + Elementor 4.4.1 (WPForms 2.0.5.1, CF7 6.2.5; actualizados 2026-11-23), hosting compartido Hostinger cuenta `u533514420`, raíz `/home/u533514420/domains/tegialegal.com/public_html`. SSL de por vida + CDN activos; caché apagada.
 - Formulario WPForms Lite id 10 ("Solicita tu diagnóstico jurídico gratuito"): sin casilla de autorización, sin CAPTCHA, no guarda entradas.
 - Riesgos: logs de errores 2023 públicos, Slider Revolution 6.2.8 y Avada 6.2.3 (2020), WP Reset en producción, 10 temas y 19 plugins, cabeceras de seguridad ausentes.
 - Informe completo: `docs/inventario-sitio-web.md`. Recomendación: arreglos rápidos ya + reconstrucción limpia en el rediseño.

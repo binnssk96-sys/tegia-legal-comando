@@ -60,6 +60,11 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - WordPress no aparece en `wordpress_installations_list` ni tras `wordpress_installations_detect`: las operaciones `wordpress_*` no están disponibles.
 - Lectura pública del sitio permitida en el entorno Default (`tegialegal.com`, `www.tegialegal.com`).
 
+## Textos legales (borrador 2026-11-22)
+- Documento "Textos legales de datos personales — Tegia Legal": https://claude.ai/artifact/FNwSxVtXXqDgkTspCu7YC5 (Claude Docs). Casillas del formulario (atención obligatoria + marketing opcional + WhatsApp opcional), aviso de privacidad, doble confirmación, pie de correos, reglas Ley 2300, cambios a la política, prueba del consentimiento y preguntas abiertas.
+- Política vigente: PDF "Politica de privacidad TEGIA LEGAL.pdf" en la raíz del sitio; responsable "Tegia Legal Business Services", domicilio Carrera 43 # 41 sur 16, Envigado. Discrepancias abiertas: NIT vs C.C., Carrera 43/44, Envigado/Medellín.
+- No publicar ninguno de estos textos hasta que el equipo jurídico los apruebe.
+
 ## Arquitectura objetivo (centro de comandos)
 - Base de datos de contactos/casos (con origen y prueba del consentimiento por contacto).
 - CRM con workflows de correo que envían por SendGrid.

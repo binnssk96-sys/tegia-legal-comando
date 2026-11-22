@@ -16,7 +16,7 @@ Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 - ✅ Inventario del sitio actual (docs/inventario-sitio-web.md).
 - ✅ Arreglos rápidos de seguridad aplicados (ver docs/inventario-sitio-web.md).
 - 👤 Actualizar WordPress y plugins desde wp-admin (la API de Hostinger no detecta esta instalación).
-- ⏳ Redactar aviso de privacidad, política de tratamiento y texto de autorización (marketing + WhatsApp) para revisión del equipo jurídico.
+- ✅ Borrador de textos legales listo para el equipo jurídico: https://claude.ai/artifact/FNwSxVtXXqDgkTspCu7YC5
 - ⏳ Configurar Google Postmaster Tools para tegialegal.com.
 - 👤 Rotar la API key de SendGrid que se pegó en el chat.
 - 👤 Confirmar que el nivel de Essentials comprado (500.000/mes) es el deseado.

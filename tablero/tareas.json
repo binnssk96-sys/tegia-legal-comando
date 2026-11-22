@@ -115,10 +115,10 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Legal",
-"tarea": "Redactar aviso de privacidad y textos de autorización",
-"estado": "pendiente",
+"tarea": "Redactar textos legales de datos personales (borrador para el equipo jurídico)",
+"estado": "hecho",
 "responsable": "Claude",
-"fecha": ""
+"fecha": "2026-11-22"
 },
 {
 "id": "T12",
@@ -236,7 +236,7 @@
 "nombre_sprint": "Sitio web seguro",
 "fechas_sprint": "7 – 18 dic 2026",
 "area": "Legal",
-"tarea": "Aprobar textos legales",
+"tarea": "Revisar y aprobar los textos legales y responder las preguntas del documento",
 "estado": "usuario",
 "responsable": "Tú",
 "fecha": ""

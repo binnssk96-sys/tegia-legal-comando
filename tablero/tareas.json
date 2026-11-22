@@ -126,10 +126,10 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Correo",
-"tarea": "Google Postmaster Tools: registro TXT publicado; falta hacer clic en Verificar",
-"estado": "usuario",
+"tarea": "Configurar y verificar Google Postmaster Tools",
+"estado": "hecho",
 "responsable": "Tú",
-"fecha": ""
+"fecha": "2026-11-23"
 },
 {
 "id": "T13",
@@ -148,10 +148,10 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "SendGrid",
-"tarea": "Confirmar el nivel de Essentials comprado (500.000/mes)",
-"estado": "usuario",
+"tarea": "Confirmar plan Essentials 50.000 (la API de SendGrid muestra cupo de 500.000; aclarar con SendGrid)",
+"estado": "hecho",
 "responsable": "Tú",
-"fecha": ""
+"fecha": "2026-11-23"
 },
 {
 "id": "T15",
@@ -401,7 +401,7 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Sitio web",
-"tarea": "Actualizar WordPress y plugins desde wp-admin (no disponible por API)",
+"tarea": "Actualizar plugins y tema desde wp-admin (WordPress ya está en 7.1.5; Elementor, WPForms, Contact Form 7 y Astra siguen en versiones de 2025)",
 "estado": "usuario",
 "responsable": "Tú",
 "fecha": ""

@@ -19,6 +19,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Dominio autenticado: `tegialegal.com` (CNAME `em7166`, DKIM s1/s2) — válido.
 - 2026-11-21: plan **Essentials comprado** — cuenta `paid`, cupo **500.000 correos/mes** (reset mensual el día 1, límite duro), reputación 100. Primer correo de prueba en español aceptado (202) desde info@tegialegal.com.
 - Antes de la compra: cuenta `free` con 0 créditos ("Maximum credits exceeded"); SendGrid reemplazó el plan gratis por una prueba de 60 días.
+- 2026-11-23: el usuario confirma que compró Essentials de 50.000/mes, pero `GET /v3/user/credits` reporta total 500.000. Aclarar con SendGrid; para planificar, usar 50.000.
 - Aunque el cupo sea grande, el volumen real lo dicta el warm-up y la lista con consentimiento.
 - Prueba: `GET /v3/user/credits` muestra el cupo; `POST /v3/mail/send` envía.
 
@@ -52,7 +53,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Captura: formulario "Cuéntanos tu caso" y suscripción ligera. Flujo de seguimiento: si describe su caso → acuse + agendar llamada/WhatsApp; si no → bienvenida, pedir más información, contenido útil y opción de que Tegia llame o escriba por WhatsApp.
 
 ## Inventario del sitio (2026-11-22)
-- WordPress 6.8.10, PHP 8.4, tema Astra 4.11.5 + Elementor 3.30, hosting compartido Hostinger cuenta `u533514420`, raíz `/home/u533514420/domains/tegialegal.com/public_html`. SSL de por vida + CDN activos; caché apagada.
+- WordPress 7.1.5 desde 2026-11-23 (antes 6.8.10), PHP 8.4, tema Astra 4.11.5 + Elementor 3.30, hosting compartido Hostinger cuenta `u533514420`, raíz `/home/u533514420/domains/tegialegal.com/public_html`. SSL de por vida + CDN activos; caché apagada.
 - Formulario WPForms Lite id 10 ("Solicita tu diagnóstico jurídico gratuito"): sin casilla de autorización, sin CAPTCHA, no guarda entradas.
 - Riesgos: logs de errores 2023 públicos, Slider Revolution 6.2.8 y Avada 6.2.3 (2020), WP Reset en producción, 10 temas y 19 plugins, cabeceras de seguridad ausentes.
 - Informe completo: `docs/inventario-sitio-web.md`. Recomendación: arreglos rápidos ya + reconstrucción limpia en el rediseño.

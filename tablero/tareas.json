@@ -137,10 +137,10 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "SendGrid",
-"tarea": "Borrar la API key antigua \"Claude API Key\" en SendGrid (la nueva \"API KEY 2V\" ya está activa)",
-"estado": "usuario",
+"tarea": "Rotar la API key de SendGrid (nueva \"API KEY 2V\"; antiguas borradas)",
+"estado": "hecho",
 "responsable": "Tú",
-"fecha": ""
+"fecha": "2026-11-23"
 },
 {
 "id": "T14",
@@ -159,10 +159,10 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Correo",
-"tarea": "Confirmar el reenvío de mariaramirez@ a tegialegal@gmail.com (activo desde ago 2026, guarda copia)",
-"estado": "usuario",
+"tarea": "Confirmar el reenvío de mariaramirez@ a tegialegal@gmail.com (cuenta de la firma)",
+"estado": "hecho",
 "responsable": "Tú",
-"fecha": ""
+"fecha": "2026-11-23"
 },
 {
 "id": "T16",
@@ -170,10 +170,10 @@
 "nombre_sprint": "Fundaciones",
 "fechas_sprint": "21 nov – 5 dic 2026",
 "area": "Proyecto",
-"tarea": "Subir la skill actualizada (.zip del 23 nov) en claude.ai",
-"estado": "usuario",
+"tarea": "Subir la skill actualizada a claude.ai",
+"estado": "hecho",
 "responsable": "Tú",
-"fecha": ""
+"fecha": "2026-11-23"
 },
 {
 "id": "T17",

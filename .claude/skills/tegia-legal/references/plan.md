@@ -4,7 +4,7 @@ Sprints de 2 semanas. Cada sprint cierra con algo usable.
 Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 Última actualización: 2026-11-22
 
-## Sprint 0 — Fundaciones (21 nov – 5 dic 2026) 🔄
+## Sprint 0 — Fundaciones (21 nov – 5 dic 2026) ✅ cerrado el 23 nov
 - ✅ SendGrid conectado por API (key en el entorno Default).
 - ✅ Plan Essentials comprado (cuenta `paid`, cupo 500.000/mes).
 - ✅ Correo de prueba en español enviado desde info@ → llegó a bandeja Principal de Gmail.
@@ -18,10 +18,10 @@ Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 - ✅ WordPress 7.1.5, Astra 4.14.3 y plugins actualizados (2026-11-23).
 - ✅ Borrador de textos legales listo para el equipo jurídico: https://claude.ai/artifact/FNwSxVtXXqDgkTspCu7YC5
 - ✅ Google Postmaster Tools verificado por el usuario (2026-11-23).
-- 🔄 Nueva API key de SendGrid activa (2026-11-23); falta borrar la antigua "Claude API Key".
+- ✅ API key de SendGrid rotada (nueva "API KEY 2V"; las antiguas borradas).
 - ✅ Plan Essentials de 50.000 confirmado por el usuario; la API muestra cupo de 500.000 (aclarar).
-- 👤 Revisar si el reenvío activo de mariaramirez@ es intencional.
-- 👤 Actualizar la skill en claude.ai con el último .zip.
+- ✅ Reenvío de mariaramirez@ a tegialegal@gmail.com confirmado (cuenta de la firma).
+- ✅ Skill actualizada en claude.ai (23 nov).
 
 ## Sprint 1 — Sitio web seguro (7 – 18 dic 2026) ⏳
 - Terminar el rediseño (partir del artefacto https://claude.ai/artifact/9HkGQ9Dqy342r9FWsn868E), en español.

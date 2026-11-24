@@ -1,17 +1,31 @@
 # BEGIN LSCACHE
 ## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
-<IfModule LiteSpeed>
+<IfModule mod_rewrite.c>
 RewriteEngine on
+RewriteRule litespeed/debug/.*\.log$ - [F,L]
+RewriteRule (^|/)\.litespeed_conf\. - [F,L]
+</IfModule>
+<IfModule LiteSpeed>
 CacheLookup on
 RewriteRule .* - [E=Cache-Control:no-autoflush]
-RewriteRule litespeed/debug/.*\.log$ - [F,L]
-RewriteRule \.litespeed_conf\.dat - [F,L]
 
 ### marker ASYNC start ###
 RewriteCond %{REQUEST_URI} /wp-admin/admin-ajax\.php
 RewriteCond %{QUERY_STRING} action=async_litespeed
 RewriteRule .* - [E=noabort:1]
 ### marker ASYNC end ###
+
+### marker REST AUTH start ###
+RewriteCond %{HTTP:Authorization} !^$
+RewriteCond %{REQUEST_URI} /wp\-json(?:/|$) [OR]
+RewriteCond %{QUERY_STRING} (^|&)rest_route=
+RewriteRule .* - [E=Cache-Control:no-cache]
+### marker REST AUTH end ###
+
+### marker POSTPASS start ###
+RewriteCond %{HTTP_COOKIE} (^|;\s*)wp-postpass_382d8a8950b0c277c4b8dff2b8e03ecc=
+RewriteRule .* - [E=Cache-Control:no-cache]
+### marker POSTPASS end ###
 
 ### marker DROPQS start ###
 CacheKeyModify -qs:fbclid
@@ -49,6 +63,13 @@ Options -Indexes
     Header always unset X-Powered-By
     Header unset X-Powered-By
 </IfModule>
+# Bloquea la enumeración de usuarios (?author=N) fuera del panel; mostraba el usuario administrador.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/wp-admin [NC]
+    RewriteCond %{QUERY_STRING} (^|&)author=[0-9]+ [NC]
+    RewriteRule ^ - [F,L]
+</IfModule>
 # END Tegia Seguridad
 
 # BEGIN WordPress
@@ -57,3 +78,12 @@ Options -Indexes
 # Any changes to the directives between these markers will be overwritten.
 
 # END WordPress
+
+# BEGIN LiteSpeed
+# The directives (lines) between "BEGIN LiteSpeed" and "END LiteSpeed" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule Litespeed>
+	SetEnv noabort 1
+</IfModule>
+# END LiteSpeed

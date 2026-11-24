@@ -78,6 +78,18 @@ Verificado después: portada, wp-login.php y página 454 responden 200 sin error
 
 **Cómo deshacer:** mover las carpetas de vuelta desde `_cuarentena-20261122/` con el administrador de archivos de Hostinger; restaurar `.htaccess` desde `sitio/htaccess-original-2026-11-22`.
 
+## Arreglo aplicado (2026-11-24): enumeración de usuarios
+Hallazgo: `/?author=1` mostraba en el título el nombre público del administrador de WordPress, que es un correo personal de Gmail. Con `wp-login.php` abierto, eso facilita ataques de fuerza bruta.
+
+| Cambio | Detalle | Verificación |
+|---|---|---|
+| `.htaccess` | Regla en el bloque "Tegia Seguridad": `?author=N` fuera de `/wp-admin` → 403. Se partió del archivo del servidor (las secciones de LiteSpeed habían cambiado frente a la copia del repo). Copia previa: `sitio/htaccess-antes-2026-11-24`; versión actual: `sitio/htaccess-seguro` | Portada 200, `?author=1` y `?author=2` 403, wp-admin 302, el correo ya no aparece. Se limpió la caché del servidor y de la CDN |
+| Usuario | **Pendiente del usuario:** en wp-admin → Usuarios → Perfil, cambiar "Mostrar este nombre públicamente" para que no sea el correo | — |
+
+**Cómo deshacer:** subir `sitio/htaccess-antes-2026-11-24` como `public_html/.htaccess`.
+
+Otros datos de la revisión del 24/11: `wp-login.php` sigue sin CAPTCHA, límite de intentos ni verificación en dos pasos (resolver en el sitio nuevo o con MFA); el certificado es de Let's Encrypt (vence 25/01/2027, renovación automática); no hay registros CAA (opcional: `0 issue "letsencrypt.org"`).
+
 **Pendiente:**
 - WordPress no aparece en el instalador de Hostinger (la detección automática no lo encontró), así que las actualizaciones de núcleo y plugins no se pueden hacer por API: hacerlas desde wp-admin o reinstalar limpio en el rediseño.
 - No hubo copia de seguridad de hPanel antes de los cambios (la API no tiene esa función); la cuarentena hace de respaldo de lo retirado. La base de datos no se tocó.

@@ -181,7 +181,7 @@
 "nombre_sprint": "Sitio web seguro",
 "fechas_sprint": "7 – 18 dic 2026",
 "area": "Sitio web",
-"tarea": "Rediseño del sitio: borrador v2 publicado (tuteo, sin Tegia Sport, formulario único con autorizaciones); en revisión de textos y diseño",
+"tarea": "Rediseño del sitio: borrador en iteración (8 rondas: logo del manual, fotos, servicios/planes/áreas, carrusel, panel tecnológico); falta aprobación final de textos y diseño",
 "estado": "en_curso",
 "responsable": "Claude",
 "fecha": ""
@@ -203,8 +203,8 @@
 "nombre_sprint": "Sitio web seguro",
 "fechas_sprint": "7 – 18 dic 2026",
 "area": "Sitio web",
-"tarea": "Endurecer seguridad: HTTPS/HSTS, CSP, WAF, MFA, backups",
-"estado": "pendiente",
+"tarea": "Endurecer seguridad: cabeceras, XML-RPC y PHP ya aplicados; faltan WAF/MFA/backups y CSP completa en el sitio nuevo",
+"estado": "en_curso",
 "responsable": "Claude",
 "fecha": ""
 },
@@ -236,8 +236,8 @@
 "nombre_sprint": "Sitio web seguro",
 "fechas_sprint": "7 – 18 dic 2026",
 "area": "Legal",
-"tarea": "Revisar y aprobar los textos legales y responder las preguntas del documento",
-"estado": "usuario",
+"tarea": "Aprobar textos legales: responsable, dirección, casillas, doble confirmación y política v2.0 resueltos; faltan criterio de WhatsApp (Ley 2300) y plazos de conservación",
+"estado": "en_curso",
 "responsable": "Tú",
 "fecha": ""
 },
@@ -414,6 +414,17 @@
 "area": "Correo",
 "tarea": "Reconfigurar \"Enviar como\" mariaramirez@ en Gmail con el SMTP de Hostinger (error 535 de autenticación)",
 "estado": "usuario",
+"responsable": "Tú",
+"fecha": ""
+},
+{
+"id": "T39",
+"sprint": "Sprint 1",
+"nombre_sprint": "Sitio web seguro",
+"fechas_sprint": "7 – 18 dic 2026",
+"area": "Proyecto",
+"tarea": "Traspasar el proyecto a otra cuenta de Claude (paquete en tegia-legal-traspaso.zip)",
+"estado": "en_curso",
 "responsable": "Tú",
 "fecha": ""
 }

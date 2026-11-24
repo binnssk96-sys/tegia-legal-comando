@@ -23,7 +23,10 @@ Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 - ✅ Reenvío de mariaramirez@ a tegialegal@gmail.com confirmado (cuenta de la firma).
 - ✅ Skill actualizada en claude.ai (23 nov).
 
-## Sprint 1 — Sitio web seguro (7 – 18 dic 2026) ⏳
+## Sprint 1 — Sitio web seguro (7 – 18 dic 2026) 🔄 adelantado desde el 23 nov
+- 🔄 Rediseño: borrador `sitio/borrador/v2.html` en iteración (8 rondas); falta aprobación final.
+- 🔄 Textos legales: casi todo resuelto; faltan criterio WhatsApp y plazos de conservación.
+- 👤 Reconfigurar "Enviar como" de mariaramirez@ en Gmail (SMTP Hostinger).
 - Terminar el rediseño (partir del artefacto https://claude.ai/artifact/9HkGQ9Dqy342r9FWsn868E), en español.
 - Formularios seguros: anti-bot, validación servidor, cifrado, casilla de autorización, registro de consentimiento.
 - Endurecimiento: HTTPS/HSTS, CSP, WAF, MFA, backups.

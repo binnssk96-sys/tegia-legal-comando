@@ -1,0 +1,359 @@
+<meta name="dash-one-writer">
+<style>
+.t2 { display: flex; flex-direction: column; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.t2-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.t2-lead { margin: var(--cds-gap-sm) 0 0; color: var(--color-fg-muted); max-width: 68ch; line-height: 1.55; }
+.t2-lead b { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); font-variant-numeric: tabular-nums; }
+.t2-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; }
+.t2 h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-xs); display: flex; align-items: center; gap: var(--cds-gap-sm); flex-wrap: wrap; }
+.t2-note { margin: 0 0 var(--cds-gap-md); color: var(--color-fg-muted); font-size: var(--cds-font-size-body); }
+.t2-note b { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); font-variant-numeric: tabular-nums; }
+.t2-stack { position: relative; min-height: 26px; }
+.t2-bar { display: flex; gap: 2px; height: 14px; border-radius: 7px; overflow: hidden; background: var(--cds-chart-grid); }
+.t2-stack .t2-bar { height: 24px; border-radius: 6px; }
+.t2-seg { display: block; min-width: 4px; height: 100%; }
+.t2-legend { list-style: none; margin: var(--cds-gap-md) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm) var(--cds-gap-lg); }
+.t2-legend li { display: flex; align-items: center; gap: var(--cds-gap-xs); color: var(--color-fg-muted); }
+.t2-legend b { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); font-variant-numeric: tabular-nums; }
+.t2-sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; flex: none; }
+.t2-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cds-gap-lg); }
+.t2-you { border-color: var(--color-warn); }
+.t2-count { font-size: var(--cds-font-size-caption); border: 1px solid var(--color-warn); color: var(--color-warn); border-radius: 999px; padding: 1px 9px; font-variant-numeric: tabular-nums; font-weight: var(--cds-font-weight-medium); }
+.t2-todo { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 80px; }
+.t2-todo li { display: flex; gap: var(--cds-gap-sm); align-items: flex-start; padding: var(--cds-pad-sm) 0; border-bottom: 1px solid var(--color-border-line); }
+.t2-todo li:last-child { border-bottom: 0; }
+.t2-dot { flex: none; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--color-warn); margin-top: 3px; }
+.t2-todo .tk { display: block; }
+.t2-todo .meta { display: block; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-top: 2px; }
+.t2-areas { position: relative; display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-height: 120px; }
+.t2-arow { display: grid; grid-template-columns: minmax(5rem, 7.5rem) 1fr 3rem; gap: var(--cds-gap-sm); align-items: center; }
+.t2-arow .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t2-track { height: 10px; border-radius: 5px; background: var(--cds-chart-grid); overflow: hidden; }
+.t2-track > span { display: block; height: 100%; border-radius: 5px; }
+.t2-val { text-align: right; font-variant-numeric: tabular-nums; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.t2-road { position: relative; display: flex; flex-direction: column; gap: var(--cds-gap-xs); min-height: 200px; }
+.t2-srow { display: grid; grid-template-columns: minmax(0, 15rem) 1fr 3.5rem; gap: var(--cds-gap-md); align-items: center; padding: var(--cds-pad-sm); border-radius: var(--cds-radius); border: 1px solid transparent; }
+.t2-srow.now { background: var(--color-bg); border-color: var(--color-border-line); }
+.t2-srow .nm b { font-weight: var(--cds-font-weight-medium); }
+.t2-srow .dt { display: block; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.t2-badge { display: inline-block; margin-left: var(--cds-gap-xs); padding: 0 7px; border-radius: 999px; font-size: var(--cds-font-size-caption); border: 1px solid var(--color-border-line); color: var(--color-fg-muted); vertical-align: 1px; }
+.t2-srow .pc { text-align: right; font-variant-numeric: tabular-nums; }
+.t2-tip { position: absolute; z-index: 5; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: var(--cds-pad-sm); font-size: var(--cds-font-size-caption); color: var(--color-fg); max-width: 240px; line-height: 1.4; }
+.t2-tip[hidden] { display: none; }
+.t2-tip div { color: var(--cds-text-secondary); }
+.t2-filter { display: flex; align-items: center; gap: var(--cds-gap-sm) var(--cds-gap-md); margin-bottom: var(--cds-gap-md); flex-wrap: wrap; }
+.t2-filter label { display: flex; align-items: center; gap: var(--cds-gap-xs); color: var(--color-fg-muted); }
+.t2-wrap { overflow-x: auto; }
+.t2 table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-body); }
+.t2 th { text-align: left; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.t2 td { padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.t2 td.tk { min-width: 16rem; }
+.t2-chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: var(--cds-font-size-caption); white-space: nowrap; border: 1px solid currentColor; }
+.t2-chip.hecho { color: var(--color-ok); }
+.t2-chip.en_curso { color: var(--color-fg); }
+.t2-chip.pendiente { color: var(--color-fg-muted); }
+.t2-chip.usuario { color: var(--color-warn); }
+.t2-row-hecho td.tk { color: var(--color-fg-muted); }
+.t2-empty { color: var(--color-fg-muted); }
+@media (max-width: 560px) {
+  .t2-srow { grid-template-columns: 1fr 3rem; }
+  .t2-srow .t2-lane { grid-column: 1 / -1; grid-row: 2; }
+  .t2-arow { grid-template-columns: 5.5rem 1fr 2.75rem; }
+}
+</style>
+
+<div class="t2">
+  <header class="t2-head" id="resumen">
+    <h1>Tablero Tegia Legal</h1>
+    <p class="t2-lead">Llevamos <b class="dash-skeleton" data-draw="pct" data-source="resumen" data-field="pct" data-row="0">—</b> del plan: <b class="dash-skeleton" data-draw="hechas" data-source="resumen" data-field="hechas" data-row="0">—</b> de <b class="dash-skeleton" data-draw="total" data-source="resumen" data-field="total" data-row="0">—</b> tareas hechas. Sprint actual: <b class="dash-skeleton" data-draw="sa_sprint" data-source="sprint_actual" data-field="sprint" data-row="0">—</b> · <b class="dash-skeleton" data-draw="sa_nombre" data-source="sprint_actual" data-field="nombre_sprint" data-row="0">—</b> (<span class="dash-skeleton" data-draw="sa_fechas" data-source="sprint_actual" data-field="fechas_sprint" data-row="0">—</span>), con <b class="dash-skeleton" data-draw="sa_pct" data-source="sprint_actual" data-field="pct" data-row="0">—</b> completado.</p>
+  </header>
+
+  <section class="t2-card" id="estado">
+    <h2>Estado del plan</h2>
+    <p class="t2-note">Las <b data-draw="total2" data-source="resumen" data-field="total" data-row="0">—</b> tareas del plan, según su estado.</p>
+    <div class="t2-stack" data-draw="stack" data-source="resumen"></div>
+    <ul class="t2-legend">
+      <li><span class="t2-sw" data-estado="hecho"></span>Hechas <b data-draw="l_hechas" data-source="resumen" data-field="hechas" data-row="0">—</b></li>
+      <li><span class="t2-sw" data-estado="en_curso"></span>En curso <b data-draw="l_curso" data-source="resumen" data-field="en_curso" data-row="0">—</b></li>
+      <li><span class="t2-sw" data-estado="pendiente"></span>Pendientes de Claude <b data-draw="l_pend" data-source="resumen" data-field="pendientes" data-row="0">—</b></li>
+      <li><span class="t2-sw" data-estado="usuario"></span>Te toca a ti <b data-draw="l_tuyas" data-source="resumen" data-field="tuyas" data-row="0">—</b></li>
+    </ul>
+  </section>
+
+  <div class="t2-grid">
+    <section class="t2-card t2-you" id="te-toca">
+      <h2>Te toca a ti <span class="t2-count" data-draw="c_tuyas" data-source="resumen" data-field="tuyas" data-row="0">—</span></h2>
+      <p class="t2-note">Lo que depende de ti para que el plan avance.</p>
+      <ul class="t2-todo" data-draw="tuyas" data-source="tareas"></ul>
+    </section>
+
+    <section class="t2-card" id="areas">
+      <h2>Avance por área</h2>
+      <p class="t2-note">Tareas hechas sobre el total de cada área.</p>
+      <div class="t2-areas" data-draw="areas" data-source="por_area"></div>
+    </section>
+  </div>
+
+  <section class="t2-card" id="sprints">
+    <h2>Hoja de ruta por sprint</h2>
+    <p class="t2-note">El largo de cada barra es el número de tareas del sprint; los colores siguen la leyenda del estado del plan.</p>
+    <div class="t2-road" data-draw="sprints" data-source="sprint_estado por_sprint"></div>
+  </section>
+
+  <section class="t2-card" id="tareas">
+    <h2>Todas las tareas</h2>
+    <div class="t2-filter">
+      <label>Sprint <select class="dash-select" id="t2-f-sprint" data-draw="f_sprint" aria-label="Filtrar por sprint"></select></label>
+      <label>Estado <select class="dash-select" id="t2-f-estado" aria-label="Filtrar por estado">
+        <option value="">Todos los estados</option>
+        <option value="hecho">Hecho</option>
+        <option value="en_curso">En curso</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="usuario">Te toca</option>
+      </select></label>
+    </div>
+    <div class="t2-wrap">
+      <table data-source="tareas" data-row-key="id">
+        <thead><tr><th data-field="estado">Estado</th><th data-field="tarea">Tarea</th><th data-field="sprint">Sprint</th><th data-field="area">Área</th><th data-field="responsable">Responsable</th><th data-field="fecha">Fecha</th></tr></thead>
+        <tbody data-draw="tabla"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+window.TG_ESTADOS = { hecho: 'Hecho', en_curso: 'En curso', pendiente: 'Pendiente', usuario: 'Te toca' };
+dash.calc('resumen', {
+  title: 'Resumen del avance',
+  description: 'Cuenta las tareas por estado y el porcentaje hecho sobre el total.',
+  inputs: ['tareas'],
+  fn: (tareas) => {
+    const c = (e) => tareas.filter((t) => t.estado === e).length;
+    const total = tareas.length, hechas = c('hecho');
+    return [{ total, hechas, en_curso: c('en_curso'), pendientes: c('pendiente'), tuyas: c('usuario'), pct: total ? Math.round(100 * hechas / total) : 0 }];
+  }
+});
+dash.calc('por_sprint', {
+  title: 'Avance por sprint',
+  description: 'Tareas hechas sobre el total de cada sprint.',
+  inputs: ['tareas'],
+  fn: (tareas) => {
+    const g = d3.groups(tareas, (t) => t.sprint);
+    return g.map(([sprint, ts]) => {
+      const hechas = ts.filter((t) => t.estado === 'hecho').length;
+      return { sprint, nombre_sprint: ts[0].nombre_sprint, fechas_sprint: ts[0].fechas_sprint, total: ts.length, hechas, pct: Math.round(100 * hechas / ts.length) };
+    }).sort((a, b) => d3.ascending(a.sprint, b.sprint));
+  }
+});
+dash.calc('sprint_estado', {
+  title: 'Estados por sprint',
+  description: 'Cuenta las tareas de cada sprint según su estado.',
+  inputs: ['tareas'],
+  fn: (tareas) => d3.groups(tareas, (t) => t.sprint).map(([sprint, ts]) => {
+    const c = (e) => ts.filter((t) => t.estado === e).length;
+    return { sprint, nombre_sprint: ts[0].nombre_sprint, total: ts.length, hecho: c('hecho'), en_curso: c('en_curso'), pendiente: c('pendiente'), usuario: c('usuario') };
+  }).sort((a, b) => d3.ascending(a.sprint, b.sprint))
+});
+dash.calc('por_area', {
+  title: 'Avance por área',
+  description: 'Tareas hechas sobre el total de cada área del proyecto.',
+  inputs: ['tareas'],
+  fn: (tareas) => d3.groups(tareas, (t) => t.area).map(([area, ts]) => {
+    const hechas = ts.filter((t) => t.estado === 'hecho').length;
+    return { area, total: ts.length, hechas, pct: Math.round(100 * hechas / ts.length) };
+  }).sort((a, b) => d3.descending(a.total, b.total) || d3.ascending(a.area, b.area))
+});
+dash.calc('sprint_actual', {
+  title: 'Sprint actual',
+  description: 'El primer sprint, en orden, que todavía no está completo.',
+  inputs: ['por_sprint'],
+  fn: (por_sprint) => {
+    const rows = por_sprint || [];
+    const s = rows.find((r) => r.pct < 100) || rows[rows.length - 1];
+    return s ? [s] : [];
+  }
+});
+</script>
+
+<script>
+(function () {
+  window.T2F = window.T2F || { sprint: '', estado: '' };
+  const ST = ['hecho', 'en_curso', 'pendiente', 'usuario'];
+  const LBL = { hecho: 'Hechas', en_curso: 'En curso', pendiente: 'Pendientes de Claude', usuario: 'Te toca a ti' };
+  const color = (e) => e === 'hecho' ? 'var(--color-ok)' : e === 'en_curso' ? dash.colors[0] : e === 'usuario' ? 'var(--color-warn)' : 'var(--cds-chart-muted)';
+
+  document.querySelectorAll('.t2-sw').forEach((s) => { s.style.background = color(s.dataset.estado); });
+
+  const unskel = (el, d) => { if (d.status !== 'loading') el.classList.remove('dash-skeleton'); };
+  const txt = (src, field, fmt) => (el) => {
+    const d = dash.data(src);
+    unskel(el, d);
+    el.textContent = d.status === 'ok' && d.data && d.data[0] ? fmt(d.data[0][field]) : '—';
+  };
+  const n = (v) => String(v), p = (v) => v + ' %';
+  dash.draw('pct', txt('resumen', 'pct', p));
+  dash.draw('hechas', txt('resumen', 'hechas', n));
+  dash.draw('total', txt('resumen', 'total', n));
+  dash.draw('total2', txt('resumen', 'total', n));
+  dash.draw('l_hechas', txt('resumen', 'hechas', n));
+  dash.draw('l_curso', txt('resumen', 'en_curso', n));
+  dash.draw('l_pend', txt('resumen', 'pendientes', n));
+  dash.draw('l_tuyas', txt('resumen', 'tuyas', n));
+  dash.draw('c_tuyas', txt('resumen', 'tuyas', n));
+  dash.draw('sa_sprint', txt('sprint_actual', 'sprint', n));
+  dash.draw('sa_nombre', txt('sprint_actual', 'nombre_sprint', n));
+  dash.draw('sa_fechas', txt('sprint_actual', 'fechas_sprint', n));
+  dash.draw('sa_pct', txt('sprint_actual', 'pct', p));
+
+  const mk = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const mark = (e, src, field, where) => { e.dataset.source = src; e.dataset.field = field; e.dataset.where = where; return e; };
+  const tip = (box) => {
+    const t = mk('div', 't2-tip'); t.hidden = true; box.appendChild(t);
+    return {
+      show(ev, lines) {
+        t.replaceChildren(...lines.map((l, i) => mk(i ? 'div' : 'strong', '', l)));
+        t.hidden = false;
+        const r = box.getBoundingClientRect();
+        let x = ev.clientX - r.left + 12;
+        const y = ev.clientY - r.top + 14;
+        const w = t.offsetWidth;
+        if (x + w > box.clientWidth) x = Math.max(0, ev.clientX - r.left - w - 12);
+        t.style.left = x + 'px'; t.style.top = y + 'px';
+      },
+      hide() { t.hidden = true; }
+    };
+  };
+  const hover = (el, tp, lines) => {
+    el.addEventListener('pointermove', (ev) => tp.show(ev, lines));
+    el.addEventListener('pointerleave', () => tp.hide());
+  };
+  const segs = (bar, counts, total, tp, title) => {
+    ST.forEach((e) => {
+      if (!counts[e]) return;
+      const s = mk('span', 't2-seg');
+      s.style.flexGrow = counts[e]; s.style.background = color(e);
+      hover(s, tp, [title ? title + ' · ' + LBL[e] : LBL[e], counts[e] + ' de ' + total + ' tareas (' + Math.round(100 * counts[e] / total) + ' %)']);
+      bar.appendChild(s);
+    });
+  };
+
+  dash.draw('stack', (box) => {
+    const d = dash.data('resumen');
+    if (d.status === 'error') { box.textContent = 'No se pudo calcular el estado de las tareas.'; return; }
+    if (d.status !== 'ok' || !d.data || !d.data[0]) { box.textContent = '—'; return; }
+    const r = d.data[0];
+    const bar = mk('div', 't2-bar');
+    bar.setAttribute('role', 'img');
+    bar.setAttribute('aria-label', r.hechas + ' hechas, ' + r.en_curso + ' en curso, ' + r.pendientes + ' pendientes de Claude y ' + r.tuyas + ' por hacer de tu lado, de ' + r.total + ' tareas');
+    box.replaceChildren(bar);
+    const tp = tip(box);
+    segs(bar, { hecho: r.hechas, en_curso: r.en_curso, pendiente: r.pendientes, usuario: r.tuyas }, r.total, tp);
+  });
+
+  dash.draw('tuyas', (ul) => {
+    const d = dash.data('tareas');
+    const msg = (t) => ul.replaceChildren(mk('li', 't2-empty', t));
+    if (d.status === 'error') return msg('No se pudo cargar la lista de tareas.');
+    if (d.status !== 'ok') return msg('Cargando…');
+    const rows = d.data.filter((t) => t.estado === 'usuario');
+    if (!rows.length) return msg('Nada pendiente de tu lado.');
+    ul.replaceChildren(...rows.map((t) => {
+      const w = 'id=' + encodeURIComponent(t.id);
+      const li = mk('li');
+      const body = mk('div');
+      body.appendChild(mark(mk('span', 'tk', t.tarea), 'tareas', 'tarea', w));
+      const meta = mk('span', 'meta');
+      meta.append(mark(mk('span', '', t.area), 'tareas', 'area', w), ' · ', mark(mk('span', '', t.sprint), 'tareas', 'sprint', w));
+      body.appendChild(meta);
+      li.append(mk('span', 't2-dot'), body);
+      return li;
+    }));
+  });
+
+  dash.draw('areas', (box) => {
+    const d = dash.data('por_area');
+    if (d.status === 'error') { box.textContent = 'No se pudo calcular el avance por área.'; return; }
+    if (d.status !== 'ok' || !d.data) { box.textContent = '—'; return; }
+    const rows = d.data.map((a) => {
+      const w = 'area=' + encodeURIComponent(a.area);
+      const row = mk('div', 't2-arow');
+      const track = mk('div', 't2-track');
+      track.setAttribute('role', 'img');
+      track.setAttribute('aria-label', a.area + ': ' + a.hechas + ' de ' + a.total + ' hechas');
+      const fill = mk('span'); fill.style.width = a.pct + '%'; fill.style.background = color('hecho'); track.appendChild(fill);
+      const val = mk('div', 't2-val');
+      val.append(mark(mk('span', '', String(a.hechas)), 'por_area', 'hechas', w), '/', mark(mk('span', '', String(a.total)), 'por_area', 'total', w));
+      row.append(mk('div', 'nm', a.area), track, val);
+      row._a = a; row._track = track;
+      return row;
+    });
+    box.replaceChildren(...rows);
+    const tp = tip(box);
+    rows.forEach((r) => hover(r._track, tp, [r._a.area, r._a.hechas + ' de ' + r._a.total + ' tareas hechas (' + r._a.pct + ' %)']));
+  });
+
+  dash.draw('sprints', (box) => {
+    const d = dash.data('sprint_estado'), ps = dash.data('por_sprint'), a = dash.data('sprint_actual');
+    if (d.status === 'error' || ps.status === 'error') { box.textContent = 'No se pudo calcular la hoja de ruta.'; return; }
+    if (d.status !== 'ok' || ps.status !== 'ok' || !d.data || !ps.data) { box.textContent = '—'; return; }
+    const info = new Map(ps.data.map((r) => [r.sprint, r]));
+    const now = a.status === 'ok' && a.data && a.data[0] ? a.data[0].sprint : null;
+    const max = d3.max(d.data, (r) => r.total) || 1;
+    const rows = d.data.map((s) => {
+      const i = info.get(s.sprint) || {};
+      const w = 'sprint=' + encodeURIComponent(s.sprint);
+      const row = mk('div', 't2-srow' + (s.sprint === now ? ' now' : ''));
+      const nm = mk('div', 'nm');
+      nm.appendChild(mk('b', '', s.sprint + ' · ' + s.nombre_sprint));
+      if (s.sprint === now) nm.appendChild(mk('span', 't2-badge', 'Actual'));
+      const dt = mk('span', 'dt');
+      dt.append((i.fechas_sprint || '') + ' · ', mark(mk('span', '', String(i.hechas)), 'por_sprint', 'hechas', w), ' de ', mark(mk('span', '', String(i.total)), 'por_sprint', 'total', w), ' hechas');
+      nm.appendChild(dt);
+      const lane = mk('div', 't2-lane');
+      const bar = mk('div', 't2-bar');
+      bar.style.width = (100 * s.total / max) + '%';
+      bar.setAttribute('role', 'img');
+      bar.setAttribute('aria-label', s.sprint + ': ' + s.hecho + ' hechas, ' + s.en_curso + ' en curso, ' + s.pendiente + ' pendientes de Claude, ' + s.usuario + ' por hacer de tu lado');
+      lane.appendChild(bar);
+      const pc = mark(mk('div', 'pc', i.pct + ' %'), 'por_sprint', 'pct', w);
+      row.append(nm, lane, pc);
+      row._s = s; row._bar = bar;
+      return row;
+    });
+    box.replaceChildren(...rows);
+    const tp = tip(box);
+    rows.forEach((r) => segs(r._bar, r._s, r._s.total, tp, r._s.sprint));
+  });
+
+  dash.draw('f_sprint', (sel) => {
+    const d = dash.data('por_sprint');
+    const rows = d.status === 'ok' && d.data ? d.data : [];
+    sel.replaceChildren(new Option('Todos los sprints', ''), ...rows.map((r) => new Option(r.sprint + ' · ' + r.nombre_sprint, r.sprint)));
+    sel.value = window.T2F.sprint;
+    sel.onchange = () => { window.T2F.sprint = sel.value; dash.draw('tabla'); };
+  });
+
+  document.querySelectorAll('#t2-f-estado').forEach((s) => s.addEventListener('change', () => { window.T2F.estado = s.value; dash.draw('tabla'); }));
+
+  dash.draw('tabla', (tb) => {
+    const d = dash.data('tareas');
+    const msg = (t) => { const tr = mk('tr'); const td = mk('td', 't2-empty', t); td.colSpan = 6; tr.appendChild(td); tb.replaceChildren(tr); };
+    if (d.status === 'error') return msg('No se pudo cargar la lista de tareas.');
+    if (d.status !== 'ok') return msg('Cargando…');
+    const f = window.T2F;
+    const rows = d.data.filter((t) => (!f.sprint || t.sprint === f.sprint) && (!f.estado || t.estado === f.estado));
+    if (!rows.length) return msg('No hay tareas con estos filtros.');
+    const fmt = d3.utcFormat('%d/%m/%Y');
+    tb.replaceChildren(...rows.map((t) => {
+      const tr = mk('tr', 't2-row-' + t.estado); tr.dataset.key = t.id;
+      const c0 = mk('td'); c0.appendChild(mk('span', 't2-chip ' + t.estado, window.TG_ESTADOS[t.estado] || t.estado)); tr.appendChild(c0);
+      tr.appendChild(mk('td', 'tk', t.tarea));
+      tr.appendChild(mk('td', '', t.sprint));
+      tr.appendChild(mk('td', '', t.area));
+      tr.appendChild(mk('td', '', t.responsable));
+      tr.appendChild(mk('td', '', t.fecha ? fmt(new Date(t.fecha + 'T00:00:00Z')) : ''));
+      return tr;
+    }));
+  });
+})();
+</script>

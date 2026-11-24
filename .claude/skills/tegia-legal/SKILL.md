@@ -5,6 +5,11 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 
 # Proyecto Tegia Legal — centro de comandos
 
+## Cómo retomar (leer primero)
+- Guía de traspaso y estado completo: `docs/TRASPASO.md` (qué reconectar en una cuenta nueva: skill, GitHub, Hostinger, clave de SendGrid por formulario seguro, hosts de red, artefactos).
+- Plan y estado por sprint: `references/plan.md`; tareas detalladas: `tablero/tareas.json`.
+- Al empezar una sesión: resumir dónde quedamos y qué sigue, y pedir solo los accesos que falten.
+
 ## Reglas fijas
 - **Idioma:** todo en español — conversación, documentos, tableros y correos. Los correos van en español neutro/colombiano, tono profesional y cercano de firma jurídica.
 - **Datos sensibles:** los visitantes pueden describir casos legales. Trátalo como información confidencial (secreto profesional + Ley 1581 de 2012). Nunca la pongas en logs, URLs, artefactos públicos ni en servicios externos no aprobados.
@@ -65,7 +70,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 
 ## Textos legales (borrador 2026-11-22)
 - Documento "Textos legales de datos personales — Tegia Legal": https://claude.ai/artifact/FNwSxVtXXqDgkTspCu7YC5 (Claude Docs). Casillas del formulario (atención obligatoria + marketing opcional + WhatsApp opcional), aviso de privacidad, doble confirmación, pie de correos, reglas Ley 2300, cambios a la política, prueba del consentimiento y preguntas abiertas.
-- Política vigente: PDF "Politica de privacidad TEGIA LEGAL.pdf" en la raíz del sitio; responsable "Tegia Legal Business Services", domicilio Carrera 43 # 41 sur 16, Envigado. Discrepancias abiertas: NIT vs C.C., Carrera 43/44, Envigado/Medellín.
+- Resuelto (2026-11-23, en el documento): el responsable del tratamiento es **María Camila Ramírez Gómez, persona natural que actúa bajo la marca Tegia Legal** (su número de cédula está en el documento legal; no copiarlo a otros lugares). Dirección: Carrera 43 # 41 sur 16, Envigado (falta corregir la de SendGrid, que dice Carrera 44, Medellín). Dos casillas separadas y doble confirmación aprobadas. Política de tratamiento v2.0 vigente desde 2026-11-23. Pendientes: criterio del primer WhatsApp frente a la Ley 2300 y plazos de conservación (propuesta: 2 años).
 - No publicar ninguno de estos textos hasta que el equipo jurídico los apruebe.
 
 ## Rediseño del sitio (Sprint 1)

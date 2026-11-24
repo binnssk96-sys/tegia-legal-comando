@@ -41,6 +41,8 @@ No contiene claves, contraseñas ni datos de clientes.
    | Tablero del proyecto | https://claude.ai/artifact/HAa4j3zxfWYFmgweHTu2W1 | `tablero/` |
    | Textos legales de datos personales | https://claude.ai/artifact/FNwSxVtXXqDgkTspCu7YC5 | **No incluido**: exportarlo desde el menú del documento (Exportar → Markdown o Word) y guardarlo en `docs/`. Incluye un enlace a la "Política de tratamiento (v2.0)": exportarla también. |
 
+   **Recreados en la cuenta nueva (2026-11-24):** borrador del sitio v2 → https://claude.ai/artifact/2XoLv2ppEHhSeNAoAKRc8p · tablero → https://claude.ai/artifact/V3jtWHAopWy5NxGNdNAJnb. El borrador original y los textos legales aún no.
+
 Lo que **no cambia** con el traspaso: la cuenta de SendGrid, Hostinger (sitio, DNS, correo), Google Postmaster Tools y GitHub siguen siendo las mismas.
 
 ## 3. Estado actual

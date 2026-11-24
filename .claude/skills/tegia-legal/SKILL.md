@@ -9,7 +9,7 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Guía de traspaso y estado completo: `docs/TRASPASO.md` (qué reconectar en una cuenta nueva: skill, GitHub, Hostinger, clave de SendGrid por formulario seguro, hosts de red, artefactos).
 - Plan y estado por sprint: `references/plan.md`; tareas detalladas: `tablero/tareas.json`.
 - Al empezar una sesión: resumir dónde quedamos y qué sigue, y pedir solo los accesos que falten.
-- **Traspaso a la cuenta nueva (2026-11-24):** GitHub conectado y repositorio clonado; borrador v2 y tablero recreados (enlaces abajo). Faltan: subir la skill a claude.ai, reconectar Hostinger, nueva clave de SendGrid por formulario seguro (y borrar "API KEY 2V"), hosts de red del entorno, y exportar/recrear los textos legales y el borrador v1 si se necesitan.
+- **Traspaso a la cuenta nueva (2026-11-24):** GitHub conectado y repositorio clonado; borrador v2 y tablero recreados (enlaces abajo); clave de SendGrid "API KEY V3" guardada y verificada; Hostinger Connector disponible. Faltan: subir la skill a claude.ai, borrar "API KEY 2V", hosts de red del entorno, y exportar/recrear los textos legales y el borrador v1 si se necesitan.
 
 ## Reglas fijas
 - **Idioma:** todo en español — conversación, documentos, tableros y correos. Los correos van en español neutro/colombiano, tono profesional y cercano de firma jurídica.
@@ -20,7 +20,8 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - **Listas de la Cámara de Comercio / RUES: NO cargarlas en SendGrid para envíos masivos.** Motivos: (1) la SIC exige autorización previa para fines comerciales y ha sancionado marketing sin consentimiento (p. ej. Movistar, 670 millones COP); (2) la Política de Uso Aceptable de SendGrid prohíbe listas compradas/extraídas/de terceros — suspensión de la cuenta y daño a la reputación del dominio tegialegal.com; (3) riesgo reputacional y disciplinario para una firma de abogados. Uso aceptable: investigación de mercado, segmentación, y prospección 1-a-1 personalizada a correos corporativos genéricos de empresas, con baja inmediata — validar con el equipo jurídico de Tegia antes.
 
 ## Estado de SendGrid (verificado 2026-11-21)
-- API keys (2026-11-23): "API KEY 2V" es la nueva y la que usa el proxy (guardada con el formulario seguro). Las keys antiguas ("Claude API Key", expuesta en el chat, y "1234 Test") fueron borradas.
+- API keys (2026-11-24, cuenta nueva): "API KEY V3" (acceso total) guardada con el formulario seguro en el entorno Default de la cuenta nueva y verificada (`/v3/user/credits` 200). "API KEY 2V" era la de la cuenta anterior: pendiente borrarla.
+- API keys (2026-11-23): "API KEY 2V" era la nueva y la que usaba el proxy de la cuenta anterior. Las keys antiguas ("Claude API Key", expuesta en el chat, y "1234 Test") fueron borradas.
 - API key conectada y guardada en el entorno **Default** (host `api.sendgrid.com`), acceso total.
 - Remitente verificado: `info@tegialegal.com` ("Tegia Legal"), reply-to `mariaramirez@tegialegal.com`.
 - Dominio autenticado: `tegialegal.com` (CNAME `em7166`, DKIM s1/s2) — válido.

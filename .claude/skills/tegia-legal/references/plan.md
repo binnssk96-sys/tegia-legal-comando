@@ -2,7 +2,7 @@
 
 Sprints de 2 semanas. Cada sprint cierra con algo usable.
 Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
-Última actualización: 2026-11-22
+Última actualización: 2026-11-24
 
 ## Sprint 0 — Fundaciones (21 nov – 5 dic 2026) ✅ cerrado el 23 nov
 - ✅ SendGrid conectado por API (key en el entorno Default).
@@ -19,7 +19,7 @@ Estados: ✅ hecho · 🔄 en curso · ⏳ pendiente · 👤 depende del usuario
 - ✅ Borrador de textos legales listo para el equipo jurídico: https://claude.ai/artifact/FNwSxVtXXqDgkTspCu7YC5
 - ✅ Google Postmaster Tools verificado por el usuario (2026-11-23).
 - ✅ API key de SendGrid rotada (nueva "API KEY 2V"; las antiguas borradas).
-- ✅ Plan Essentials de 50.000 confirmado por el usuario; la API muestra cupo de 500.000 (aclarar).
+- ✅ Plan Essentials de 50.000 confirmado por el usuario; la API muestra cupo de 500.000 (el usuario confirmó 50.000 el 24 nov; se planifica con 50.000).
 - ✅ Reenvío de mariaramirez@ a tegialegal@gmail.com confirmado (cuenta de la firma).
 - ✅ Skill actualizada en claude.ai (23 nov).
 

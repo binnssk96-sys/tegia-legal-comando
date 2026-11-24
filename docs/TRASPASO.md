@@ -28,7 +28,7 @@ No contiene claves, contraseñas ni datos de clientes.
    - Si prefieres no usar el repositorio actual: crea uno vacío en la cuenta nueva y sube el contenido de este paquete.
 3. **Abrir una sesión de Claude Code con el repositorio seleccionado.** La skill dentro del repo se carga sola.
 4. **Conectar Hostinger** en claude.ai → Conectores → Hostinger (la cuenta de hosting no cambia; solo se autoriza de nuevo).
-5. **SendGrid:** la clave guardada en esta cuenta no viaja. En SendGrid (Settings → API Keys) crear una clave nueva con acceso completo y guardarla cuando Claude abra el **formulario seguro** (nunca pegarla en el chat). Después borrar la clave "API KEY 2V".
+5. **SendGrid:** la clave guardada en esta cuenta no viaja. En SendGrid (Settings → API Keys) crear una clave nueva con acceso completo y guardarla cuando Claude abra el **formulario seguro** (nunca pegarla en el chat). Después borrar la clave "API KEY 2V". *(Hecho el 24/11/2026: clave "API KEY V3" guardada y "API KEY 2V" borrada.)*
 6. **Red del entorno de Claude Code:** cuando Claude lo pida, aprobar estos hosts permitidos: `dns.google`, `tegialegal.com`, `www.tegialegal.com`, `srv1282-files.hstgr.io` (servidor de archivos de Hostinger). `api.sendgrid.com` queda habilitado al guardar la clave.
 7. **Artefactos de claude.ai** (son privados de esta cuenta; elegir una opción para cada uno):
    - *Compartirlos* con la cuenta nueva desde el menú **Compartir** de cada uno, o
@@ -48,7 +48,7 @@ Lo que **no cambia** con el traspaso: la cuenta de SendGrid, Hostinger (sitio, D
 ## 3. Estado actual
 
 **Sprint 0 — Fundaciones: cerrado (18/18).**
-- SendGrid Email API Essentials (plan de 50.000; la API reporta cupo de 500.000, por aclarar con SendGrid). Dominio `tegialegal.com` autenticado; correo de prueba llegó a Principal.
+- SendGrid Email API Essentials (cupo de 50.000/mes confirmado por el usuario; la API muestra 500.000, pero se planifica con 50.000). Dominio `tegialegal.com` autenticado; correo de prueba llegó a Principal.
 - DNS en Hostinger: DMARC `p=none` con reportes a `dmarc@tegialegal.com` (alias de `info@`), SPF de Hostinger, DKIM de Hostinger y SendGrid, verificación de Google Postmaster Tools (verificado).
 - Sitio actual (WordPress 7.1.5, Astra 4.14.3, plugins al día): plugins/temas riesgosos en cuarentena `public_html/_cuarentena-20261122/`, cabeceras de seguridad, PHP endurecido.
 
@@ -68,7 +68,7 @@ Lo que **no cambia** con el traspaso: la cuenta de SendGrid, Hostinger (sitio, D
 
 **Del lado del usuario**
 1. Reconfigurar "Enviar como" de `mariaramirez@tegialegal.com` en Gmail con `smtp.hostinger.com`, puerto 465 SSL (error 535 de autenticación).
-2. Aclarar con SendGrid el cupo de 500.000 vs. el plan de 50.000.
+2. ~~Aclarar el cupo con SendGrid~~ — resuelto el 24/11/2026: 50.000/mes.
 3. Confirmar en el sitio: "respuesta en 24 horas hábiles", textos de planes ("cancela o cambia de plan"), servicios de criptoactivos y la Ley 2466 de 2025, horario de atención.
 4. Precios o "desde $…" de los planes mensuales (recomendado).
 5. Borrar la carpeta de cuarentena del sitio actual cuando lleve unas semanas estable.

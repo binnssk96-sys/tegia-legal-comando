@@ -69,7 +69,7 @@ Lo que **no cambia** con el traspaso: la cuenta de SendGrid, Hostinger (sitio, D
 **Del lado del usuario**
 1. Reconfigurar "Enviar como" de `mariaramirez@tegialegal.com` en Gmail con `smtp.hostinger.com`, puerto 465 SSL (error 535 de autenticación).
 2. ~~Aclarar el cupo con SendGrid~~ — resuelto el 24/11/2026: 50.000/mes.
-3. Confirmar en el sitio: "respuesta en 24 horas hábiles", textos de planes ("cancela o cambia de plan"), servicios de criptoactivos y la Ley 2466 de 2025, horario de atención.
+3. Confirmar en el sitio: ~~"respuesta en 24 horas hábiles"~~ (resuelto 25/11/2026: "en menos de 24 horas", sin "hábiles"), textos de planes ("cancela o cambia de plan"), servicios de criptoactivos y la Ley 2466 de 2025, horario de atención.
 4. Precios o "desde $…" de los planes mensuales (recomendado).
 5. Borrar la carpeta de cuarentena del sitio actual cuando lleve unas semanas estable.
 

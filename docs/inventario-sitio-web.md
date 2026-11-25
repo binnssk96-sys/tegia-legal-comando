@@ -84,7 +84,7 @@ Hallazgo: `/?author=1` mostraba en el título el nombre público del administrad
 | Cambio | Detalle | Verificación |
 |---|---|---|
 | `.htaccess` | Regla en el bloque "Tegia Seguridad": `?author=N` fuera de `/wp-admin` → 403. Se partió del archivo del servidor (las secciones de LiteSpeed habían cambiado frente a la copia del repo). Copia previa: `sitio/htaccess-antes-2026-11-24`; versión actual: `sitio/htaccess-seguro` | Portada 200, `?author=1` y `?author=2` 403, wp-admin 302, el correo ya no aparece. Se limpió la caché del servidor y de la CDN |
-| Usuario | **Pendiente del usuario:** en wp-admin → Usuarios → Perfil, cambiar "Mostrar este nombre públicamente" para que no sea el correo | — |
+| Usuario | El usuario cambió "Mostrar este nombre públicamente" para que no sea el correo (25/11/2026) | El correo no aparece en el sitio |
 
 **Cómo deshacer:** subir `sitio/htaccess-antes-2026-11-24` como `public_html/.htaccess`.
 

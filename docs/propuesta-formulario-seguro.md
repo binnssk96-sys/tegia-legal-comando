@@ -23,7 +23,7 @@ El formulario "Cuéntanos tu caso" se procesa en un programa PHP pequeño, apart
    - la consulta, con el relato cifrado;
    - la prueba de cada autorización: texto exacto y versión, fecha y hora, IP, navegador y canal.
 5. Envía por SendGrid:
-   - **Acuse al visitante.** Confirma que se recibió la consulta y que responderemos en 24 horas hábiles. **Nunca incluye el relato.**
+   - **Acuse al visitante.** Confirma que se recibió la consulta y que responderemos en menos de 24 horas. **Nunca incluye el relato.**
    - **Aviso interno** a la firma (ver decisión 1).
    - **Confirmación de suscripción**, solo si marcó la casilla de correos. Entra a la lista comercial únicamente cuando hace clic en el enlace (doble confirmación, numeral 7 de la política).
 6. El visitante ve "Recibimos tu solicitud". Si algo falla, ve un mensaje claro con los teléfonos de contacto. No pierde lo que escribió.

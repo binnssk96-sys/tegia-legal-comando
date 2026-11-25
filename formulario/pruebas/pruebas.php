@@ -95,7 +95,7 @@ ok(contar($db, 'contactos') === 1 && contar($db, 'consultas') === 1 && contar($d
 $c = $db->query('SELECT * FROM contactos')->fetch(PDO::FETCH_ASSOC);
 ok($c['correo'] === 'ana@ejemplo.com' && $c['telefono'] === '+573001234567', 'normaliza correo y teléfono');
 $q = $db->query('SELECT * FROM consultas')->fetch(PDO::FETCH_ASSOC);
-ok(!str_contains($q['relato_cifrado'], 'despidieron') && str_starts_with($q['relato_cifrado'], 'v1:'), 'el relato queda cifrado');
+ok(!str_contains($q['relato_cifrado'], 'despidieron') && str_starts_with($q['relato_cifrado'], 'v2:'), 'el relato queda cifrado');
 ok($cif->descifrar($q['relato_cifrado']) === "Me despidieron sin justa causa.\nTengo contrato a término fijo.", 'el relato se descifra con la clave');
 ok((int) $q['acuse_enviado'] === 1 && (int) $q['aviso_enviado'] === 1 && (int) $q['prefiere_whatsapp'] === 1, 'marca correos enviados y preferencia de WhatsApp');
 $auts = $db->query('SELECT * FROM autorizaciones ORDER BY id')->fetchAll(PDO::FETCH_ASSOC);
@@ -234,6 +234,10 @@ ok($fallo, 'un dato alterado no se descifra');
 $fallo = false;
 try { (new Cifrado(Cifrado::nuevaClave()))->descifrar($g); } catch (\RuntimeException) { $fallo = true; }
 ok($fallo, 'otra clave no descifra');
+$s = new Cifrado($k, false);
+$gs = $s->cifrar('formato sodium');
+ok(str_starts_with($gs, 'v1:') && $x->descifrar($gs) === 'formato sodium', 'lee también el formato sodium (v1) con la misma clave');
+ok(str_starts_with($g, 'v2:') && $s->descifrar($g) === 'secreto profesional', 'por defecto usa AES-256-GCM (v2)');
 
 echo "\n" . ($total - $fallas) . " de {$total} pruebas pasaron.\n";
 exit($fallas ? 1 : 0);

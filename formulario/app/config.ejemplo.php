@@ -8,7 +8,7 @@ return [
     'bd_usuario' => 'u533514420_formulario',
     'bd_clave'   => '',
 
-    // php -r 'echo base64_encode(sodium_crypto_aead_xchacha20poly1305_ietf_keygen()), PHP_EOL;'
+    // php -r 'echo base64_encode(random_bytes(32)), PHP_EOL;'
     // Si se pierde, los relatos guardados no se pueden leer: guardar una copia en un lugar seguro.
     'clave_cifrado' => '',
     // Secreto para el HMAC de la IP en el límite de envíos: bin2hex(random_bytes(32)).

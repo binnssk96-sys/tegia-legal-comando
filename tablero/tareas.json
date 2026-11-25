@@ -192,8 +192,8 @@
 "nombre_sprint": "Sitio web seguro",
 "fechas_sprint": "7 – 18 dic 2026",
 "area": "Sitio web",
-"tarea": "Formularios seguros con autorización y registro de consentimiento",
-"estado": "pendiente",
+"tarea": "Formulario seguro: construido (66 pruebas) e instalado en Hostinger en modo de prueba; falta aprobación de textos legales para publicarlo",
+"estado": "en_curso",
 "responsable": "Claude",
 "fecha": ""
 },
@@ -214,8 +214,8 @@
 "nombre_sprint": "Sitio web seguro",
 "fechas_sprint": "7 – 18 dic 2026",
 "area": "SendGrid",
-"tarea": "Conectar formulario → contactos → correo de bienvenida",
-"estado": "pendiente",
+"tarea": "Conectar formulario → base de datos → correos por SendGrid (acuse, aviso interno, doble confirmación): instalado en modo de prueba",
+"estado": "en_curso",
 "responsable": "Claude",
 "fecha": ""
 },
@@ -423,7 +423,7 @@
 "nombre_sprint": "Sitio web seguro",
 "fechas_sprint": "7 – 18 dic 2026",
 "area": "Proyecto",
-"tarea": "Traspasar el proyecto a otra cuenta de Claude (paquete en tegia-legal-traspaso.zip)",
+"tarea": "Traspasar el proyecto a otra cuenta de Claude: GitHub, SendGrid, Hostinger, red y artefactos listos; falta subir la skill a claude.ai",
 "estado": "en_curso",
 "responsable": "Tú",
 "fecha": ""

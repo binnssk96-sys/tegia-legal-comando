@@ -33,9 +33,15 @@ Mientras `clave_prueba` tenga valor, `enviar.php` responde 404 a todo el que no 
 5. Verificar en el servidor qué cabecera trae la IP real del visitante (la CDN puede cambiarla) y ajustar `ip_cabecera`.
 6. Probar con `X-Prueba`: envío completo, correos, doble confirmación, límite.
 
+## Estado en el servidor (25/11/2026)
+
+Instalado en **modo de prueba**. Base de datos `u533514420_formulario` con las 4 tablas; clave de SendGrid restringida "Formulario web tegialegal.com (solo envio)"; `ip_cabecera` = `REMOTE_ADDR` (verificado). Prueba real hecha: envío completo aceptado, validación 422 y origen ajeno 403 en el servidor; sin `X-Prueba` todo responde 404.
+
+El instalador de un solo uso (`herramientas/instalar.php`) crea las tablas y muestra las cabeceras de IP; se sube a una carpeta temporal de `public_html`, se llama una vez con `X-Prueba` y se borra.
+
 ## Leer un relato
 
-Los relatos están cifrados en la base de datos. Para leer uno fuera del correo de aviso, con acceso al servidor:
+Los relatos están cifrados en la base de datos con AES-256-GCM (OpenSSL; el PHP de Hostinger no trae `sodium` activo, que queda como respaldo). Para leer uno fuera del correo de aviso, con acceso al servidor:
 
 ```php
 $c = new Tegia\Formulario\Cifrado($claveCifrado);

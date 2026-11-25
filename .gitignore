@@ -7,3 +7,7 @@ datos/
 *.csv
 *.xlsx
 tegia-legal-skill.zip
+
+# Formulario: configuración con claves y registros del servidor
+formulario/app/config.php
+formulario/app/registro/

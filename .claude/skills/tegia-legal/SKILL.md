@@ -93,6 +93,12 @@ description: Contexto, decisiones y reglas del proyecto Tegia Legal (firma de ab
 - Manual de marca: tipografía Montserrat; paleta principal negro #000000 y gris #3d4543; secundaria verde #2a5c44 y gris #919191 (la principal debe predominar); logo mínimo 200 px de ancho; no cambiar tipografía, proporción, colores ni aplicar efectos.
 - El diseño y los textos NO están aprobados: iterar con el usuario. Por confirmar: "respuesta en 24 horas", "Registro Nacional de Abogados", testimonios, horario, alianzas (c.e.r., Proyección Contable).
 
+## Formulario seguro (construido 2026-11-25)
+- Código en `formulario/` (ver `formulario/README.md`): PHP aparte de WordPress; `publico/` → `public_html/formulario/` (`enviar.php`, `confirmar.php`); `app/` → `domains/tegialegal.com/formulario-app/` (fuera de public_html). Base de datos propia (tablas contactos, consultas, autorizaciones, intentos), relato cifrado XChaCha20-Poly1305, prueba de autorización con texto+versión+fecha+IP+navegador, doble confirmación (GET muestra botón, POST confirma), correos por SendGrid sin seguimiento de clics/aperturas.
+- Decisiones por defecto (el usuario dijo "constrúyelo ya" sin elegir): aviso interno CON relato a info@ con reply-to al visitante; Turnstile apagado hasta tener cuenta de Cloudflare; límite 5/IP/hora; modo de prueba con cabecera `X-Prueba` hasta que el equipo jurídico apruebe los textos.
+- Pruebas: `php formulario/pruebas/pruebas.php` (SQLite y SendGrid simulado). **No** probar envíos reales desde el contenedor con correos inventados: el proxy inyecta la clave real de SendGrid.
+- `config.php` nunca al repo (.gitignore). La clave de SendGrid del servidor debe ser restringida a Mail Send.
+
 ## Correo personal en Gmail
 - `tegialegal@gmail.com` recibe el reenvío de mariaramirez@ y usaba "Enviar como" mariaramirez@tegialegal.com. Desde 2026 falla con `535 5.7.8 Authentication failed`. Solución: en Gmail → Cuentas → Enviar como → editar → SMTP `smtp.hostinger.com`, puerto 465 SSL, usuario `mariaramirez@tegialegal.com` y contraseña del buzón (o restablecerla en hPanel). No usar SendGrid para el correo personal.
 

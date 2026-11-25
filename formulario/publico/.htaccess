@@ -1,0 +1,11 @@
+# public_html/formulario/ — solo se exponen los dos puntos de entrada.
+Options -Indexes
+<FilesMatch ".*">
+    Require all denied
+</FilesMatch>
+<FilesMatch "^(enviar|confirmar)\.php$">
+    Require all granted
+</FilesMatch>
+<IfModule LiteSpeed>
+    CacheDisable public /
+</IfModule>

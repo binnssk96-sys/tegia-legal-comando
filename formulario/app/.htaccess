@@ -1,0 +1,2 @@
+# formulario-app/ vive fuera de public_html; esto es una segunda barrera por si se copia dentro por error.
+Require all denied

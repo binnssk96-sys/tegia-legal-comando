@@ -1,6 +1,6 @@
 # Propuesta: formulario seguro de diagnóstico
 
-**Estado:** propuesta para aprobar (24/11/2026). Nada de esto está construido ni publicado.
+**Estado (25/11/2026):** aprobada y **construida** en `formulario/` (64 pruebas pasan). Decisiones tomadas por defecto: aviso con relato a info@ (A), Turnstile listo pero apagado hasta tener la clave, campo trampa + límites activos. Aún no está en el servidor ni publicada.
 
 El formulario "Cuéntanos tu caso" se procesa en un programa PHP pequeño, aparte de WordPress, en el mismo hosting de Hostinger. Guarda cada consulta y la prueba de la autorización en una base de datos propia, con el relato cifrado. Además, envía por SendGrid el acuse al visitante y el aviso interno a la firma.
 
